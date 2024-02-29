@@ -1,0 +1,283 @@
+:root {
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-5: hsl(205, 78%, 60%);
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --clr-pink: #A140FD;
+    --clr-skyblue: #21A5EE;
+    --clr-background: #F4F7FC;
+    --clr-grey-white: #87888B;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  body{
+    background: var(--clr-background);
+
+  }
+  .bubble-1 img{
+    height: 100px;
+    width: 100px;
+    position: fixed;
+  }
+  .logo{
+    padding: 10px;
+    position: absolute;
+    margin-top: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .logo span{
+    color: var(--clr-skyblue);
+    position: fixed;
+  }
+  nav{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+  }
+  nav a{
+    margin-right: 30px;
+    padding-top: 20px;
+    display: flex;
+    float: right;
+    text-decoration: none;
+    color: var(--clr-skyblue);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  nav a:hover{
+    text-decoration: underline;
+  }
+  nav .nav-contents{
+    margin-right: 10rem;
+  }
+  nav button{
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 5rem;
+    margin-right: 5rem;
+    margin-top: 13px;
+    background: var(--clr-skyblue);
+    color: var(--clr-white);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  nav img{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    margin-right: 1.5rem;
+    margin-top: 7px;
+  }
+  .fixed-elipse img{
+    float: right;
+    margin-top: 100px;
+    height: 10px;
+  }
+  .menu-icons #menu-icon{
+    position: absolute;
+    height: 17px;
+    width: 30px;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 18px;
+    display: none;
+    position: fixed;
+  }
+  @media screen and (max-width: 950px) {
+    nav{
+      position: fixed;
+    }
+    nav a{
+      opacity: 0;
+      position: absolute;
+      height: auto;
+      width: auto;
+      background: grey;
+      right: 0;
+      top: 4%;
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-icons #menu-icon{
+        display: block;
+    }
+
+    nav button{
+        opacity: 0;
+    }
+    nav img{
+        margin-right: 3.3rem;
+        height: 2.5rem;
+    }
+  }
+  .about-me {
+    display: flex;
+    position: relative; 
+    padding: 0px 30px 0px;
+    width: 100%;
+  }
+  .about-me .profile {
+    height: 25rem;
+    width: 50%;
+  }
+  
+  .about-me .my-names {
+    left: 0;
+    height: 12rem;
+    width: 50%;
+    margin-top: 6rem;
+  }
+  
+  .about-me .profile {
+    right: 0;
+    padding: 0px 20px 0px;
+  } 
+  @media screen and (max-width: 850px) {
+    .about-me {
+      display: flex;
+      flex-direction: column;
+    }
+    .about-me .my-names,
+    .about-me .profile {
+      position: static;  
+      width: 100%;     
+    }
+  }
+  .about-me .my-names .hey{
+    font-size: 2rem;
+  }
+  .about-me .my-names .names{
+    font-size: 3rem;
+    color: #fff;
+    display: flex;
+    font-weight: 100;
+    margin-top: 10px;
+    background: linear-gradient(to right,#9340FB,var(--clr-skyblue));
+    background-clip: text;
+    color: transparent;
+  }
+  .about-me .my-names .title{
+    font-size: 1rem;
+    color: var(--clr-grey-white);
+    margin-top: 10px;
+  }
+  .about-me .profile img{
+    height: 8rem;
+    margin-left: 35%;
+  }
+  .about-me .profile .who{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    font-weight: 100;
+    margin-top: 10px;
+    background: linear-gradient(to right,var(--clr-skyblue),#9340FB);
+    background-clip: text;
+    color: transparent;
+    margin-left: 31%;
+  }
+  .about-me .profile span{
+   font-weight: 200;
+   line-height: 1.6;
+   padding-left: 2rem 0px 0px 0px;
+  }
+  @media screen and (max-width: 450px) {
+    .about-me .my-names .hey{
+      font-size: 1.5rem;
+    }
+    .about-me .my-names .names{
+      font-size: 2rem;
+    }
+    .about-me .profile img{
+      margin-left: 25%;
+    }
+    .about-me .profile .who{
+      margin-left: 19%;
+      font-size: 2rem;
+    }
+    .about-me .profile{
+      padding: 0px 0px 0px;
+    }
+  }
+  .about-me .intro{
+    position: absolute;
+    height: 13rem;
+    width: 90%;
+    margin-top: 20rem;
+    padding: 0px 15rem 0px;
+  }
+  .about-me .intro span{
+    display: flex;
+  }
+  .about-me .intro .introduction{
+    margin-left: 12rem;
+    font-size: 1.5rem;
+    color: var(--clr-grey-white);
+  }
+  .about-me .intro .title{
+    font-size: 1.5rem;
+    margin-top: 12px;
+  }
+  .about-me .intro .text{
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: var(--clr-grey-white);
+  }
+  .about-me .intro p{
+    color: #fff;
+  }
+  @media screen and (max-width: 853px) {
+    .about-me .intro{
+      margin-top: 40rem;
+      padding: 0px;
+    }
+  }
+  @media screen and (max-width: 470px) {
+    .about-me .intro .introduction{
+      margin-left: 5rem;
+    }
+    .about-me .intro .title{
+      font-size: 1.3rem;
+    }
+  }
