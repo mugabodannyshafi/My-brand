@@ -48,21 +48,16 @@
   body{
     background: var(--clr-background);
   }
-  .bubble-1 img{
-    height: 100px;
-    width: 100px;
-    position: fixed;
-  }
   .logo{
     padding: 10px;
     position: absolute;
     margin-top: 20px;
     font-size: 15px;
     text-transform: uppercase;
+    position: fixed;
   }
   .logo span{
     color: var(--clr-skyblue);
-    position: fixed;
   }
   nav{
     width: 100%;
@@ -77,13 +72,17 @@
     text-decoration: none;
     color: var(--clr-skyblue);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   nav a:hover{
     text-decoration: underline;
   }
   nav .nav-contents{
     margin-right: 10rem;
+  }
+  nav .active{
+    color: #9340FB;
+    font-weight: 600;
   }
   nav button{
     position: absolute;
@@ -107,10 +106,15 @@
     margin-right: 1.5rem;
     margin-top: 7px;
   }
-  .fixed-elipse img{
-    float: right;
-    margin-top: 100px;
-    height: 10px;
+  .fixed-elipse{
+    position: fixed;
+    top: 20%;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(200deg,#9F40FC,#21A5EE);
+    border-radius: 50%;
+    opacity: 0.1;
   }
   .menu-icons #menu-icon{
     position: absolute;
@@ -123,7 +127,7 @@
     position: fixed;
   }
   @media screen and (max-width: 950px) {
-    nav{
+    nav .dark{
       position: fixed;
     }
     nav a{
@@ -154,6 +158,7 @@
     position: relative; 
     padding: 0px 30px 0px;
     width: 100%;
+    margin-top: 5rem;
   }
   .about-me .profile {
     height: 25rem;
@@ -240,25 +245,24 @@
   }
   .about-me .intro{
     position: absolute;
-    height: 13rem;
     width: 90%;
     margin-top: 20rem;
-    padding: 0px 15rem 0px;
+    padding: 0px 10rem 0px;
   }
   .about-me .intro span{
     display: flex;
   }
   .about-me .intro .introduction{
     margin-left: 12rem;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     color: var(--clr-grey-white);
   }
   .about-me .intro .title{
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 12px;
   }
   .about-me .intro .text{
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-top: 10px;
     color: var(--clr-grey-white);
@@ -281,7 +285,7 @@
     }
   }
   .cv{
-    margin-top: 10rem;
+    margin-top: 12rem;
     margin-left: 30rem;
   }
   .cv button{
@@ -318,6 +322,12 @@
     .cv{
       margin-top: 15rem;
       margin-left: 10rem;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .cv{
+      margin-top: 17rem;
+      margin-left: 7rem;
     }
   }
 .skills{
@@ -406,6 +416,12 @@
 .works .projects .calculator{
   border: 1px solid var(--clr-grey-white);
   border-radius: 10px;
+}
+@media screen and (max-width: 639px) {
+  .works .projects .img{
+    width: 100%;
+    height: 20rem;
+  }
 }
 .blog-title{
     font-size: 2rem;
@@ -513,7 +529,7 @@
 }
 .contacts{
   width:50%;
-  margin-left: 35%;
+  margin-left: 30%;
 }
 .contacts .get{
   margin-top: 30px;
@@ -521,22 +537,22 @@
   color: var(--clr-grey-white);
 }
 .contacts .email{
-  width:400px;
-  height: 35px;
+  width:450px;
+  height: 45px;
   margin-top: 20px;
 }
 .contacts .names{
-  height: 35px;
-  width: 197px;
+  height: 45px;
+  width: 450px;
   margin-top: 20px;
 }
 .contacts .phone{
-  height: 35px;
-  width: 197px;
+  height: 45px;
+  width: 450px;
   margin-top: 20px;
 }
 .contacts .message{
-  width:400px;
+  width:450px;
   height: 105px;
   margin-top: 20px;
 }
@@ -556,13 +572,13 @@
     border-radius: 3px;
 }
 .contacts button{
-  height: 30px;
+  height: 45px;
   background: #675C9C;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  width: 400px;
+  width: 450px;
   margin-top: 10px;
 }
 @media screen and (max-width: 700px) {
