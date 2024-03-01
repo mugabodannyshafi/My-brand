@@ -44,6 +44,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth;
   }
   body{
     background: var(--clr-background);
@@ -51,10 +52,11 @@
   .logo{
     padding: 10px;
     position: absolute;
-    margin-top: 20px;
+    margin-top: 7px;
     font-size: 15px;
     text-transform: uppercase;
     position: fixed;
+    top: 0;
   }
   .logo span{
     color: var(--clr-skyblue);
@@ -62,7 +64,10 @@
   nav{
     width: 100%;
     height: 60px;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
   }
   nav a{
     margin-right: 30px;
@@ -80,7 +85,7 @@
   nav .nav-contents{
     margin-right: 10rem;
   }
-  nav .active{
+  nav a.active{
     color: #9340FB;
     font-weight: 600;
   }
@@ -123,10 +128,14 @@
     right: 0;
     margin-right: 10px;
     margin-top: 18px;
+    top: 0;
     display: none;
     position: fixed;
   }
   @media screen and (max-width: 950px) {
+    nav{
+      background: none;
+    }
     nav .dark{
       position: fixed;
     }
@@ -155,7 +164,6 @@
   }
   .about-me {
     display: flex;
-    position: relative; 
     padding: 0px 30px 0px;
     width: 100%;
     margin-top: 5rem;
@@ -346,6 +354,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  box-shadow: var(--dark-shadow);
 }
 .skills .cards img{
   height: 70px;
@@ -412,6 +421,7 @@
   height: 15rem;
   width: 22rem;
   margin-top: 10px;
+  box-shadow: var(--dark-shadow);
 }
 .works .projects .calculator{
   border: 1px solid var(--clr-grey-white);
@@ -557,19 +567,25 @@
   margin-top: 20px;
 }
 .contacts input{
-  color: #87888B;
+    color: #000;
     padding: 10px;
     border: 1px solid #87888B;
     outline: none;
     border-radius: 3px;
+}
+.contacts input:focus{
+  border: 1.5px solid #675C9C;
 }
 .contacts .inputs textarea{
     resize: none;
     border: 1px solid #87888B;
     outline: none;
     padding: 10px;
-    color: #87888B;
+    color: #000;
     border-radius: 3px;
+}
+.contacts .inputs textarea:focus{
+  border: 1.5px solid #675C9C;
 }
 .contacts button{
   height: 45px;
