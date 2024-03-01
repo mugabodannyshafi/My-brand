@@ -47,7 +47,6 @@
   }
   body{
     background: var(--clr-background);
-
   }
   .bubble-1 img{
     height: 100px;
@@ -281,3 +280,344 @@
       font-size: 1.3rem;
     }
   }
+  .cv{
+    margin-top: 10rem;
+    margin-left: 30rem;
+  }
+  .cv button{
+    height: 40px;
+    width: 10rem;
+    border-radius: 5px;
+    border: none;
+    background: #675C9C;
+  }
+  .cv button a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 970px) {
+    .cv{
+      margin-top: 15rem;
+      margin-left: 20rem;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .cv{
+      margin-top: 10rem;
+      margin-left: 20rem;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .cv{
+      margin-top: 15rem;
+      margin-left: 5rem;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .cv{
+      margin-top: 15rem;
+      margin-left: 10rem;
+    }
+  }
+.skills{
+  padding-right: 10px;
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.skills .cards{
+  margin-left: 20px;
+  height: 20rem;
+  border: 1px solid #9340FB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.skills .cards img{
+  height: 70px;
+}
+.skills .cards span{
+  font-size: 20px;
+  font-weight: 500;
+}
+.skills .cards p{
+  font-size: 14px;
+  margin-top: 15px;
+  color: var(--clr-grey-white);
+  line-height: 1.6;
+}
+.other-skills{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  margin-top: 20px;
+  margin-left: 3rem;
+  gap: 15px;
+}
+.other-skills img{
+  height: 50px;
+}
+@media screen and (max-width: 700px) {
+  .other-skills{
+    margin-left: 1rem;
+  }
+}
+.works .title{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 100;
+    margin-top: 30px;
+    background: linear-gradient(300deg,#9340FB,#23A0EF);
+    background-clip: text;
+    color: transparent;
+}
+.works .projects{
+  width: 100%;
+  padding-right: 10px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 10px;
+  gap: 20px;
+}
+.works .projects .project-title{
+  height: 30px;
+  width: 180px;
+  background: #fff;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 22%;
+  padding: 5px;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.works .projects .img{
+  height: 15rem;
+  width: 22rem;
+  margin-top: 10px;
+}
+.works .projects .calculator{
+  border: 1px solid var(--clr-grey-white);
+  border-radius: 10px;
+}
+.blog-title{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(300deg,#9340FB,#23A0EF);
+    background-clip: text;
+    color: transparent;
+    margin-top: 40px;
+}
+.blogs{
+  padding-right: 10px;
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.blogs .cards{
+  margin-left: 20px;
+  height: 25rem;
+  box-shadow: var(--dark-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.blogs .cards .dates{
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+  background: #222;
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--clr-white);
+  border-radius: 9px;
+}
+.blogs .cards img{
+  height: 15rem;
+  width: 100%;
+}
+.blogs .cards span{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
+.blogs .cards p{
+  font-size: 14px;
+  margin-top: 15px;
+  color: var(--clr-grey-white);
+  line-height: 1.6;
+  text-align: center;
+}
+.hire{
+  height: 13rem;
+  width: 100%;
+  background: #3C3633;
+  margin-top: 30px;
+}
+.hire{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--clr-white);
+}
+.hire button{
+  margin: 40px;
+  height: 40px;
+  width: 10rem;
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: #3C3633;
+  border: 1.5px solid var(--clr-white);
+  transition: .5s;
+}
+.hire button:hover{
+  background: var(--clr-white);
+  color: var(--clr-black);
+}
+@media screen and (max-width: 420px) {
+  .hire{
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+.contacts-title{
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(300deg,#9340FB,#23A0EF);
+  background-clip: text;
+  color: transparent;
+  margin-top: 40px;
+}
+.contacts{
+  width:50%;
+  margin-left: 35%;
+}
+.contacts .get{
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: var(--clr-grey-white);
+}
+.contacts .email{
+  width:400px;
+  height: 35px;
+  margin-top: 20px;
+}
+.contacts .names{
+  height: 35px;
+  width: 197px;
+  margin-top: 20px;
+}
+.contacts .phone{
+  height: 35px;
+  width: 197px;
+  margin-top: 20px;
+}
+.contacts .message{
+  width:400px;
+  height: 105px;
+  margin-top: 20px;
+}
+.contacts input{
+  color: #87888B;
+    padding: 10px;
+    border: 1px solid #87888B;
+    outline: none;
+    border-radius: 3px;
+}
+.contacts .inputs textarea{
+    resize: none;
+    border: 1px solid #87888B;
+    outline: none;
+    padding: 10px;
+    color: #87888B;
+    border-radius: 3px;
+}
+.contacts button{
+  height: 30px;
+  background: #675C9C;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 400px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 700px) {
+  .contacts{
+    margin-left: 2rem;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 454px) {
+    .contacts .email{
+      width: 90%;
+    }
+    .contacts .message{
+      width: 90%;
+    }
+    .contacts button{
+      width: 90%;
+    }
+    .contacts .phone{
+      width: 90%;
+    }
+    .contacts .names{
+      width: 90%;
+    }
+}
+.thanks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+footer{
+  height: 8rem;
+  width: 100%;
+  background: #183650;
+  margin-top: 3rem;
+  padding: 0px 0px 0px 40%;
+}
+footer .text{
+  padding: 23px 0px 0px 15px;
+  color: var(--clr-white);
+}
+footer img{
+  margin-top: 25px;
+  height: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  footer{
+    padding: 0px 0px 0px 30%;
+  }
+}
