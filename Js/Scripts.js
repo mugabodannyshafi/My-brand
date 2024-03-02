@@ -22,9 +22,17 @@ darkBtn.addEventListener("click", () =>{
     if(document.body.classList.contains('dark-theme'))
     {
         darkBtn.src = "./image/light.png"
+        darkBtn.classList.add('light')
     }
     else
     {
         darkBtn.src = "./image/dark.png"
+        darkBtn.classList.add('dark')
     }
 })
+
+const scrollToTop = document.getElementById("scroll")
+
+scrollToTop.onclick = () =>{
+    window.scrollTo(0,0)
+}

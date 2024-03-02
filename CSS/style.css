@@ -62,9 +62,11 @@
     position: fixed;
     top: 0;
     color: var(--clr-black);
+    cursor: pointer;
   }
   .logo span{
     color: var(--clr-skyblue);
+    font-weight: 600;
   }
   nav{
     width: 100%;
@@ -127,6 +129,10 @@
     --clr-grey-white: #bbbbbb;
     --clr-hire: #20272e;
     --dark-shadow: var(--light-shadow)
+  }
+  .light{
+    height: 30px;
+    margin-top: 12px;
   }
   .fixed-elipse{
     position: fixed;
@@ -375,6 +381,7 @@
   align-items: center;
   padding: 10px;
   box-shadow: var(--dark-shadow);
+  border-radius: 7px;
 }
 .skills .cards img{
   height: 70px;
@@ -426,10 +433,13 @@
   padding: 10px;
   gap: 20px;
 }
+.works .projects .images{
+  position: relative;
+}
 .works .projects .project-title{
   height: 30px;
   width: 180px;
-  background: #fff;
+  background: var(--clr-big-white);
   font-size: 15px;
   margin-top: 10px;
   margin-left: 22%;
@@ -437,6 +447,20 @@
   border-radius: 50px;
   text-align: center;
   cursor: pointer;
+  color: var(--clr-black);
+}
+.works .projects a{
+  position: absolute;
+  left: 37%;
+  top: 50%;
+  height: 30px;
+  width: 100px;
+  background: #21A5EE;
+  text-align: center;
+  padding-top: 6px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity: 0;
 }
 .works .projects .img{
   height: 15rem;
@@ -444,10 +468,7 @@
   margin-top: 10px;
   box-shadow: var(--dark-shadow);
 }
-.works .projects .calculator{
-  border: 1px solid var(--clr-grey-white);
-  border-radius: 10px;
-}
+
 @media screen and (max-width: 639px) {
   .works .projects .img{
     width: 100%;
@@ -589,11 +610,12 @@
   margin-top: 20px;
 }
 .contacts input{
-    color: #000;
+    color: var(--clr-black);
     padding: 10px;
     border: 1px solid #87888B;
     outline: none;
     border-radius: 3px;
+    background: transparent;
 }
 .contacts input:focus{
   border: 1.5px solid #675C9C;
@@ -603,8 +625,9 @@
     border: 1px solid #87888B;
     outline: none;
     padding: 10px;
-    color: #000;
+    color: var(--clr-black);
     border-radius: 3px;
+    background: transparent;
 }
 .contacts .inputs textarea:focus{
   border: 1.5px solid #675C9C;
@@ -670,6 +693,11 @@ footer img{
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+.scroll img{
+  height: 50px;
+  float: right;
+  cursor: pointer;
 }
 @media screen and (max-width: 480px) {
   footer{
