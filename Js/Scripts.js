@@ -7,7 +7,6 @@ window.onscroll = () => {
         let offset = sec.offsetTop-150
         let height = sec.offsetHeight
         let id = sec.getAttribute('id');
-
         if(top >= offset && top < offset + height){
             navLinks.forEach(links => {
                 links.classList.remove('active')
@@ -16,3 +15,16 @@ window.onscroll = () => {
         }
     })
 }
+const darkBtn = document.getElementById("dark")
+darkBtn.addEventListener("click", () =>{
+    document.body.classList.toggle('dark-theme')
+
+    if(document.body.classList.contains('dark-theme'))
+    {
+        darkBtn.src = "./image/light.png"
+    }
+    else
+    {
+        darkBtn.src = "./image/dark.png"
+    }
+})
