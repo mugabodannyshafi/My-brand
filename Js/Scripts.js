@@ -1,5 +1,14 @@
+document.addEventListener('visibilitychange',
+    function() {
+        if (document.visibilityState === "visible") {
+            document.title = "MUGABO Shafi Danny || MyBrand";
+        } else {
+            document.title = "Back To MyBrand 😢";
+        }
+    })
+
 let sections = document.querySelectorAll("section")
-let navLinks = document.querySelectorAll("header nav a")
+let navLinks = document.querySelectorAll(".nav-contents a")
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -10,7 +19,7 @@ window.onscroll = () => {
         if(top >= offset && top < offset + height){
             navLinks.forEach(links => {
                 links.classList.remove('active')
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
+                document.querySelector('.nav-contents a[href*=' + id + ']').classList.add('active')
             })
         }
     })
@@ -36,3 +45,31 @@ const scrollToTop = document.getElementById("scroll")
 scrollToTop.onclick = () =>{
     window.scrollTo(0,0)
 }
+
+const menuBtn = document.getElementById("menu-icon");
+menuBtn.onclick = () => {
+    const navBar = document.querySelector('.menu');
+    navBar.classList.toggle('active-menu');
+
+    if(navBar.classList.contains('active-menu'))
+    {
+       darkBtn.style.display = 'none'
+       darkBtn.innerHTML = 'hey'
+       menuBtn.style.color = "#fff"
+    }
+    else
+    {
+        darkBtn.style.display = 'block'
+        menuBtn.style.color = "#21A5EE"
+    }
+}
+
+const menuLinks = document.querySelectorAll('.menu_link');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const navBar = document.querySelector('.menu');
+        navBar.classList.remove('active-menu');
+        darkBtn.style.display = 'block'
+        menuBtn.style.color = "#21A5EE"
+    });
+});
