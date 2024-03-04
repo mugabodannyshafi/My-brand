@@ -69,6 +69,10 @@
     padding: 10px;
     font-weight: 600;
   }
+  .container .contents .logo a{
+    text-decoration: none;
+    color: var(--clr-black);
+  }
   .container .contents .logo span{
     color: var(--clr-skyblue);
     font-weight: 600;

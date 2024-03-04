@@ -54,7 +54,6 @@ menuBtn.onclick = () => {
     if(navBar.classList.contains('active-menu'))
     {
        darkBtn.style.display = 'none'
-       darkBtn.innerHTML = 'hey'
        menuBtn.style.color = "#fff"
     }
     else
