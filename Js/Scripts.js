@@ -72,3 +72,61 @@ menuLinks.forEach(link => {
         menuBtn.style.color = "#21A5EE"
     });
 });
+const cardBtn = document.querySelectorAll('.blog-cards')
+for(let i = 0; i < cardBtn.length; i++)
+{
+    cardBtn[i].addEventListener('click', () => {
+        const modal = document.querySelector(".modal-overlay");
+        const closeBtn = document.querySelector(".close-btn");
+        modal.classList.toggle('open-modal')
+
+          const modalContainer = document.querySelector('.modal-container')
+          const modalImage = cardBtn[i].querySelector('.modal-image')
+          const cardImage = modalImage.cloneNode(true)
+          modalContainer.append(cardImage)
+
+          const modalContent = document.createElement("div")
+          modalContent.classList.add('modal-content')
+          const blogsTitle = cardBtn[i].querySelector('.blogsTitle')
+          const cardTitle =blogsTitle.cloneNode(true) 
+          modalContent.append(cardTitle)
+
+          const blogsDescription = cardBtn[i].querySelector('.blog-description')
+          const cardDescription =blogsDescription.cloneNode(true) 
+          modalContent.append(cardDescription)
+
+          const line = document.createElement('div')
+          line.classList.add('like-comment-line')
+          modalContent.append(line)
+
+          const likeComment = document.createElement('div')
+          likeComment.classList.add('like-comment')
+          likeComment.innerHTML = "<i class='fa-regular fa-heart'></i><i class='fa-regular fa-comment'></i><i class='fa-regular fa-share-from-square'></i>"
+
+          const likes = document.createElement('span')
+          likes.classList.add('likes')
+          likes.innerHTML = "1,200 likes"
+        
+          modalContent.append(likeComment)
+          modalContent.append(likes)
+
+          const comment = document.createElement('div')
+          comment.classList.add('write-comment')
+          comment.innerHTML = "<input type='text' placeholder='Write a comment'><button>Comment</button>"
+          modalContent.append(comment)
+          modalContainer.append(modalContent)
+          
+          closeBtn.addEventListener("click", function () {
+            modal.classList.remove("open-modal");
+            modalContainer.removeChild(modalContent)
+          });
+          window.addEventListener('click', (e) =>
+          {
+            if(e.target === modal)
+            {
+                modal.classList.remove('open-modal')
+                modalContainer.removeChild(modalContent)
+            }
+          })
+    })
+}
