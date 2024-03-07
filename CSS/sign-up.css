@@ -95,7 +95,7 @@
     outline: none;
     border-radius: 5px;
     padding: 10px;
-    color: var(--clr-grey-white);
+    color: var(--clr-black);
   }
   .container .contents .inputs input::placeholder{
     color: var(--clr-grey-white);
@@ -119,7 +119,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    background: var(--clr-skyblue);
+    background: #BBBBBB;
     cursor: pointer;
   }
   .container .contents .sign-up button a{
@@ -161,7 +161,7 @@
         height: 55px;
         margin-top: 1.5rem;
         font-size: 20px;
-        color: var(--clr-black);
+        color: black;
     }
     .container .contents .inputs input::placeholder{
         font-size: 20px;

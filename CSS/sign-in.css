@@ -120,7 +120,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    background: var(--clr-skyblue);
+    background: #BBBBBB;
     cursor: pointer;
   }
   .container .contents .sign-up button a{
