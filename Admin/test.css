@@ -170,9 +170,6 @@
   .hamburger{
     visibility: hidden;
   }
-  .close{
-    visibility: hidden;
-  }
   .contents{
     width: 72%;
     margin-left: 20px;
@@ -482,75 +479,22 @@
 
   }
   @media screen and (max-width: 600px){
-    .container{
-      display: block;
-    }
     .side-bar{
-      position: absolute;
+      visibility: visible;
       width: 100%;
-      height: 96vh;
-      position: relative;
-      padding-left: 10px;
-      visibility: hidden;
-      z-index: 1;
-    }
-    .active-side{
-      visibility: visible;
-    }
-    .active-side .profile-picture .name{
-      visibility: visible;
-    }
-    .active-side .profile-picture .role{
-      visibility: visible;
-    }
-    .active-side .operations .home span{
-      visibility: visible;
-    }
-    .active-side .operations .articles span{
-      visibility: visible;
-    }
-    .active-side .operations .messages span{
-      visibility: visible;
-    }
-    .active-side .operations .setting span{
-      visibility: visible;
-    }
-    .active-side .operations .logout span{
-      visibility: visible;
-    }
-    .side-bar .profile-picture img{
-      visibility: hidden;
     }
     .hamburger{
       visibility: visible;
       font-size: 1.7rem;
       color: var(--clr-white);
-      position: absolute;
-      top: 0;
-      padding: 10px;
-      z-index: 2;
-    }
-    .close{
-      font-size: 1.7rem;
-      color: tomato;
-      position: absolute;
-      top: 0;
-      padding: 10px;
-      z-index: 2;
     }
     .contents{
-      position: absolute;
-      padding-left: 2rem;
       margin-top: 30px;
       margin-left: 0px;
       padding-bottom: 20px;
-      top: 0;
     }
     .contents .search-profile img{
     margin-top: 10px;
-    }
-    .contents .search-profile input::placeholder{
-      font-size: 12px;
     }
     .contents .search-profile .search{
       top: 10%;
