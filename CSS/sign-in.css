@@ -121,12 +121,13 @@
     outline: none;
     border-radius: 5px;
     background: #BBBBBB;
-    cursor: pointer;
+    cursor: not-allowed;
   }
   .container .contents .sign-up button a{
     color: var(--clr-white);
     text-decoration: none;
     font-size: 15px;
+    pointer-events: none;
   }
   .container .contents .have-account{
     margin-top: 8rem;
