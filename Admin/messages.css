@@ -109,10 +109,14 @@
   .side-bar .operations .home img{
     height: 23px;
   }
-  .side-bar .operations .home span{
+  .side-bar .operations .home span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
+  }
+  .side-bar .operations #active span a{
+    color: #21A5EE;
   }
   .side-bar .operations .articles{
     display: flex;
@@ -122,10 +126,11 @@
   .side-bar .operations .articles img{
     height: 23px;
   }
-  .side-bar .operations .articles span{
+  .side-bar .operations .articles span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .side-bar .operations .messages{
     display: flex;
@@ -135,10 +140,11 @@
   .side-bar .operations .messages img{
     height: 23px;
   }
-  .side-bar .operations .messages span{
+  .side-bar .operations .messages span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .side-bar .operations .setting{
     display: flex;
@@ -148,10 +154,11 @@
   .side-bar .operations .setting img{
     height: 23px;
   }
-  .side-bar .operations .setting span{
+  .side-bar .operations .setting span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .side-bar .operations .logout{
     display: flex;
@@ -168,6 +175,9 @@
     font-size: 15px;
   }
   .hamburger{
+    visibility: hidden;
+  }
+  .close{
     visibility: hidden;
   }
   .contents{
@@ -225,142 +235,6 @@
   .contents hr{
     margin-top: 8px;
     opacity: 0.1;
-  }
-  .contents .queries{
-    height: 12rem;
-    width: 50%;
-    background: #26233E;
-    margin-top: 20px;
-    margin-left: 25%;
-    padding-top: 10px;
-    padding-left: 15px;
-  }
-  .contents .queries .queries-title{
-    text-align: center;
-    color: var(--clr-white);
-    display: flex;
-    flex-direction: column;
-  }
-  .contents .message1{
-    margin-top: 10px;
-    height: 50px;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-  }
-  .contents .message1 img{
-    height: 50px;
-  }
-  .contents #mucyo{
-    position: absolute;
-    left: 15%;
-    top: 5px;
-    color: var(--clr-white);
-    font-size: 13px;
-    opacity: 0.9;
-  }
-  .contents #message1{
-    position: absolute;
-    top:  28px;
-    left: 15%;
-    font-size: 10px;
-    color: #9594a1;
-    letter-spacing: 1px;
-  }
-  .contents .message2{
-    margin-top: 12px;
-    height: 50px;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-  }
-  .contents .message2 img{
-    height: 50px;
-  }
-  .contents #gloire{
-    position: absolute;
-    left: 15%;
-    top: 5px;
-    color: var(--clr-white);
-    font-size: 13px;
-    opacity: 0.9;
-  }
-  .contents #message2{
-    position: absolute;
-    top:  28px;
-    left: 15%;
-    font-size: 10px;
-    color: #9594a1;
-    letter-spacing: 1px;
-  }
-  .contents .queries .see-all-messages{
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  .contents .queries .see-all-messages span{
-    color: var(--clr-skyblue);
-    opacity: 0.6;
-  }
-  .contents .queries .see-all-messages img{
-    height: 15px;
-  }
-  .contents .articles{
-    margin-top: 10px;
-    position: relative;
-  }
-  .contents .manage-title{
-    color: var(--clr-white);
-    font-size: 1.3rem;
-  }
-  .contents .blogs{
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    position: relative;
-  }
-  .contents .blogs #blog2{
-    margin-left: 4rem;
-  }
-  .contents .blogs .blog-card{
-    height: 11rem;
-    width: 20rem;
-    background: #26233E;
-    display: flex;
-    position: relative;
-  }
-  .contents .blogs .blog-card img{
-    height: 11rem;
-    width: 10rem;
-  }
-  .contents .blogs .blog-card .texts{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5px;
-  }
-  .contents .blogs .blog-card .texts span{
-    font-size: 10px;
-    text-align: center;
-    color: var(--clr-white);
-  }
-  .contents .blogs .blog-card .texts p{
-    font-size: 9px;
-    color: var(--clr-white);
-    text-align: center;
-    opacity: 0.5;
-    line-height: 1.6;
-    margin-top: 10px;
-    letter-spacing: 1px;
-  }
-  .contents .articles .view-all{
-    position: absolute;
-    left: 78%;
-    color: var(--clr-skyblue);
-    top: 40%;
-    cursor: pointer;
-    opacity: 0.6;
   }
   @media screen and (max-width: 900px) {
     .side-bar{
@@ -428,104 +302,80 @@
     .contents hr{
       margin-top: 25px;
     }
-    .contents .queries{
-      margin-top: 40px;
-      height: 18rem;
-      width: 70%;
-      margin-left: 15%;
-    }
-    .contents .queries .queries-title{
-      font-size: 1.5rem;
-    }
-    .contents .message1{
-      margin-top: 40px;
-    }
-    .contents #mucyo{
-      font-size: 20px;
-    }
-    .contents #message1{
-      font-size: 17px;
-    }
-    .contents .message2{
-      margin-top: 40px;
-    }
-    .contents #gloire{
-      font-size: 20px;
-    }
-    .contents #message2{
-      font-size: 17px;
-    }
-    .contents .queries .see-all-messages span{
-      font-size: 20px;
-      opacity: 1;
-    }
-    .contents .articles{
-      margin-top: 5rem;
-    }
-    .contents .manage-title{
-      font-size: 1.5rem;
-    }
-    .contents .blogs{
-      margin-top: 30px;
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-      gap: 20px;
-    }
-    .contents .blogs #blog2{
-      margin-left: 0rem;
-    }
-    .contents .blogs .view-all{
-      font-size: clamp(25px,4vw,40px);
-    }
-
   }
   @media screen and (max-width: 600px){
+    .container{
+      display: block;
+    }
     .side-bar{
-      visibility: visible;
+      position: absolute;
       width: 100%;
+      height: 96vh;
+      position: relative;
+      padding-left: 10px;
+      visibility: hidden;
+      z-index: 1;
+    }
+    .active-side{
+      visibility: visible;
+    }
+    .active-side .profile-picture .name{
+      visibility: visible;
+    }
+    .active-side .profile-picture .role{
+      visibility: visible;
+    }
+    .active-side .operations .home span{
+      visibility: visible;
+    }
+    .active-side .operations .articles span{
+      visibility: visible;
+    }
+    .active-side .operations .messages span{
+      visibility: visible;
+    }
+    .active-side .operations .setting span{
+      visibility: visible;
+    }
+    .active-side .operations .logout span{
+      visibility: visible;
+    }
+    .side-bar .profile-picture img{
+      visibility: hidden;
     }
     .hamburger{
       visibility: visible;
       font-size: 1.7rem;
       color: var(--clr-white);
+      position: absolute;
+      top: 0;
+      padding: 10px;
+      z-index: 2;
+    }
+    .close{
+      font-size: 1.7rem;
+      color: tomato;
+      position: absolute;
+      top: 0;
+      padding: 10px;
+      z-index: 2;
     }
     .contents{
+      position: absolute;
+      padding-left: 2rem;
       margin-top: 30px;
       margin-left: 0px;
       padding-bottom: 20px;
+      top: 0;
     }
     .contents .search-profile img{
     margin-top: 10px;
     }
+    .contents .search-profile input::placeholder{
+      font-size: 12px;
+    }
     .contents .search-profile .search{
       top: 10%;
       left: 60%;
-    }
-    .contents .queries{
-      width: 100%;
-      margin-left: 0px;
-    }
-    .contents #mucyo{
-      font-size: 17px;
-      left: 19%;
-    }
-    .contents #message1{
-      font-size: 14px;
-      left: 19%;
-    }
-    .contents #gloire{
-      font-size: 17px;
-      left: 19%;
-    }
-    .contents #message2{
-      font-size: 14px;
-      left: 19%;
-    }
-    .contents .blogs .blog-card .texts p{
-      font-size: 11px;
-    }
-    .contents .articles .view-all{
-      position: absolute;
-      top: 0;
-      opacity: 1;
     }
   }
