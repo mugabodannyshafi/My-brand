@@ -117,6 +117,7 @@
   }
   .side-bar .operations #active span a{
     color: #21A5EE;
+    font-weight: 600;
   }
   .side-bar .operations .articles{
     display: flex;
@@ -169,10 +170,11 @@
   .side-bar .operations .logout img{
     height: 23px;
   }
-  .side-bar .operations .logout span{
+  .side-bar .operations .logout span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .hamburger{
     visibility: hidden;
@@ -235,6 +237,140 @@
   .contents hr{
     margin-top: 8px;
     opacity: 0.1;
+  }
+  .contents .settings{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .contents .settings .inbox{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--clr-white);
+  }
+  form{
+    display: grid;
+    place-content: center;
+  }
+  form .inputs{
+    position: relative;
+    padding: 20px;
+    padding-left: 30px;
+    width: 100%;
+    height: auto;
+}
+form .inputs input[type=password]{
+    margin-top: 25px;
+}
+form .inputs input[type=submit]{
+  margin-top: 25px;
+  border: none;
+  background: var(--clr-skyblue);
+  color: var(--clr-white);
+  cursor: pointer;
+  font-size: 15px;
+}
+.form-group{
+    position: relative;
+  }
+  .form-group input{
+    padding-bottom: 5px;
+    font-size: 10px;
+    width: 300px;
+    border:none;
+    background: transparent;
+    color: #9594a1;
+    transition: 0.15s all ease;
+    outline: none;
+    height: 35px;
+    border: 1.5px solid #9594a1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+  }
+  .form-group input:focus{
+    border: 1px solid var(--clr-skyblue);
+  }
+  .contents .settings form{
+    height: 350px;
+    width: 100%;
+    background: #26233e;
+    margin-top: 5px;
+    padding: 20px;
+  }
+  form .inputs input[type=email]{
+    margin-top: 25px;
+}
+  .form-group input:focus + .form-label,
+  .form-group input:not(:placeholder-shown) + .form-label {
+    transform: translate(5px, -22px) scale(0.9);
+    font-size: 17px;
+    color: #000;
+  }
+  .form-group input:focus + #form-label,
+  .form-group input:not(:placeholder-shown) + #form-label {
+    transform: translate(5px, -22px) scale(0.9);
+    font-size: 17px;
+    color: #000;
+  }
+  .form-group input:focus + #form-label1,
+  .form-group input:not(:placeholder-shown) + #form-label1 {
+    transform: translate(5px, -22px) scale(0.9);
+    font-size: 17px;
+    color: #000;
+  }
+  .form-group .form-label{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 13px;
+    color: grey;
+    pointer-events: none;
+    transition: 0.15s all ease;
+  }
+  .form-group #form-label{
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    font-size: 13px;
+    color: grey;
+    pointer-events: none;
+    transition: 0.15s all ease;
+  }
+  .form-group #form-label1{
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    font-size: 13px;
+    color: grey;
+    pointer-events: none;
+    transition: 0.15s all ease;
+  }
+  .form-group input:focus + .form-label,
+  .form-group input:not(:placeholder-shown) + .form-label {
+    top: 15px;
+    font-size: 13px;
+    color: grey;
+    left: 0;
+    background: #26233e;
+    padding: 0px 5px 0px;
+  }
+  .form-group input:focus + #form-label,
+  .form-group input:not(:placeholder-shown) + #form-label {
+    top: 40px;
+    left: 0;
+    font-size: 13px;
+    color: grey;
+    background: #26233e;
+    padding: 0px 5px 0px;
+  }
+  .form-group input:focus + #form-label1,
+  .form-group input:not(:placeholder-shown) + #form-label1 {
+    top: 40px;
+    left: 0;
+    font-size: 13px;
+    color: grey;
+    background: #26233e;
+    padding: 0px 5px 0px;
   }
   @media screen and (max-width: 900px) {
     .side-bar{

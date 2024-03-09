@@ -53,6 +53,20 @@ body{
   background: var(--clr-background);
   transition: background 0.5s, color 0.5s;
 }
+body::-webkit-scrollbar{
+  width: 11px;
+}
+body::-webkit-scrollbar-track{
+  background: #d1e5ff;
+}
+body::-webkit-scrollbar-thumb{
+  background: #1b192e;
+  transition: .5s;
+  border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover{
+  background: #433f73;
+}
 svg{
   position: absolute;
   z-index: -1;
@@ -152,6 +166,7 @@ hr{
   --clr-hire: #20272e;
   --dark-shadow: var(--light-shadow)
 }
+
 .light{
   height: 30px;
   margin-top: 12px;

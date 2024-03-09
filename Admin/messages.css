@@ -117,6 +117,7 @@
   }
   .side-bar .operations #active span a{
     color: #21A5EE;
+    font-weight: 600;
   }
   .side-bar .operations .articles{
     display: flex;
@@ -169,10 +170,11 @@
   .side-bar .operations .logout img{
     height: 23px;
   }
-  .side-bar .operations .logout span{
+  .side-bar .operations .logout span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .hamburger{
     visibility: hidden;
@@ -235,6 +237,49 @@
   .contents hr{
     margin-top: 8px;
     opacity: 0.1;
+  }
+  .contents .messages{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .contents .messages .inbox{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--clr-white);
+  }
+  .contents .messages .message-content{
+    height: 350px;
+    width: 100%;
+    background: #26233e;
+    margin-top: 5px;
+    overflow-y: scroll;
+    padding: 20px;
+  }
+  .contents .message-content::-webkit-scrollbar{
+    width: 10px;
+  }
+  .contents .message-content::-webkit-scrollbar-track{
+    background: #d1e5ff;
+  }
+  .contents .message-content::-webkit-scrollbar-thumb{
+    background: #1b192e;
+    transition: .5s;
+  }
+  .contents .message-content::-webkit-scrollbar-thumb:hover{
+    background: #2e2b4e;
+  }
+  .contents .messages .message-content .message p{
+    margin-top: 8px;
+  }
+  .contents .messages .message-content .message span{
+    color: var(--clr-white);
+    opacity: 0.8;
+  }
+  .contents .messages .message-content .message i{
+    color: #9594a1;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-style: normal;
   }
   @media screen and (max-width: 900px) {
     .side-bar{

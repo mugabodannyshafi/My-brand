@@ -19,3 +19,24 @@ menuBtn.onclick = () => {
         menuBtn.style.visibility = 'visible'
     })
 }
+
+const modelBtn = document.getElementById('button')
+
+modelBtn.addEventListener('click', () => {
+    const modal = document.querySelector('.modal-overlay')
+    const closeBtn = document.querySelector('.close-btn')
+    modal.classList.toggle('open-modal')
+    
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('open-modal')
+    })
+
+    window.addEventListener('click', (e) =>
+          {
+            if(e.target === modal)
+            {
+                modal.classList.remove('open-modal')
+            }
+          })
+})
+

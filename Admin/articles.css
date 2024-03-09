@@ -159,6 +159,7 @@
   }
   .side-bar .operations #active span a{
     color: #21A5EE;
+    font-weight: 600;
   }
   .side-bar .operations .logout{
     display: flex;
@@ -169,10 +170,11 @@
   .side-bar .operations .logout img{
     height: 23px;
   }
-  .side-bar .operations .logout span{
+  .side-bar .operations .logout span a{
     padding: 5px 5px 5px 13px;
     color: #9594a1;
     font-size: 15px;
+    text-decoration: none;
   }
   .hamburger{
     visibility: hidden;
@@ -182,7 +184,6 @@
   }
   .contents{
     width: 72%;
-    margin-left: 20px;
   }
   .contents .search-profile{
     width: 100%;
@@ -218,6 +219,7 @@
     left: 46%;
     top: 30%;
     height: 30px;
+    cursor: pointer;
   }
   .contents .user{
     margin-top: 5%;
@@ -236,6 +238,98 @@
     margin-top: 8px;
     opacity: 0.1;
   }
+  .contents .articles{
+    margin-top: 20px;
+    width: 100%;
+    padding-right: 20px;
+    height: 400px;
+    overflow-y: scroll;
+    position: relative;
+  }
+  .contents .articles::-webkit-scrollbar{
+    width: 10px;
+  }
+  .contents .articles::-webkit-scrollbar-track{
+    background: #d1e5ff;
+  }
+  .contents .articles::-webkit-scrollbar-thumb{
+    background: #1b192e;
+    transition: .5s;
+  }
+  .contents .articles::-webkit-scrollbar-thumb:hover{
+    background: #2e2b4e;
+  }
+  .contents .articles .add button{
+    height: 30px;
+    width: 90px;
+    border-radius: 7px;
+    border: none;
+    background: var(--clr-skyblue);
+    float: right;
+    position: fixed;
+    right: 40px;
+    z-index: 1;
+    color: var(--clr-white);
+    cursor: pointer;
+  }
+  .blogs{
+    padding-right: 10px;
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    position: relative;
+    }
+    .blogs .blog-cards{
+    margin-left: 20px;
+    height: 20rem;
+    box-shadow: var(--dark-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 270px;
+    background: #26233e;
+    }
+    .blogs .blog-cards .blogsTitle{
+    color: var(--clr-white);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0.8;
+    }
+    .blogs .blog-cards p{
+    font-size: 14px;
+    margin-top: 15px;
+    color: #9594a1;
+    line-height: 1.6;
+    text-align: center;
+    }
+    .blogs .blog-cards {
+      position: relative;
+    }
+    
+    .blogs .blog-cards img {
+      height: 10rem;
+      width: 100%;
+    }
+    .blogs .blog-cards .actions{
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      font-size: 19px;
+    }
+    .blogs .blog-cards .fa-pen-to-square{
+      color: #28a745;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .blogs .blog-cards .fa-trash{
+      color: #dc3545;
+      cursor: pointer;
+    }
   @media screen and (max-width: 900px) {
     .side-bar{
       width: 10%;
@@ -378,4 +472,75 @@
       top: 10%;
       left: 60%;
     }
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    opacity: 0;
+    z-index: -1;
+  }
+  .modal-overlay.open-modal {
+    opacity: 1;
+    z-index: 1;
+  }
+  .modal-container {
+    background: #181c2d;
+    border-radius: var(--radius);
+    width: 50%;
+    height: 80%;
+    position: relative;
+  }
+  .modal-container form{
+    display: grid;
+    place-content: center;
+    margin-top: 20%;
+  }
+  .modal-container form h3{
+    color: #bdbec0;
+    text-align: center;
+  }
+  .modal-container form input{
+    width: 300px;
+    margin-top: 20px;
+    height: 35px;
+    background: #2f3342;
+    border: 1px solid #515566;
+    border-radius: 5px;
+    color: var(--clr-white);
+    outline: none;
+    padding: 10px;
+  }
+  .modal-container form input[type="submit"]{
+    background: var(--clr-skyblue);
+    cursor: pointer;
+  }
+  .modal-container form input::placeholder{
+    color: #b5b5b8;
+  }
+  .modal-container form input:focus{
+    border: 1px solid var(--clr-skyblue);
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: var(--clr-red-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1;
+  }
+  .close-btn:hover {
+    color: var(--clr-red-light);
+    transform: scale(1.3);
   }

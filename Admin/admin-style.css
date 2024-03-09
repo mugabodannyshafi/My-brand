@@ -107,6 +107,7 @@
   }
   .side-bar .operations #active span a{
     color: #21A5EE;
+    font-weight: 600;
   }
   .side-bar .operations .home img{
     height: 23px;
@@ -365,13 +366,14 @@
     margin-top: 10px;
     letter-spacing: 1px;
   }
-  .contents .articles .view-all{
+  .contents .articles .view-all a{
     position: absolute;
     left: 78%;
     color: var(--clr-skyblue);
     top: 40%;
     cursor: pointer;
     opacity: 0.6;
+    text-decoration: none;
   }
   @media screen and (max-width: 900px) {
     .side-bar{
