@@ -26,17 +26,24 @@ window.onscroll = () => {
 }
 const darkBtn = document.getElementById("dark")
 darkBtn.addEventListener("click", () =>{
+    const sun = document.querySelector('.fa-sun')
     document.body.classList.toggle('dark-theme')
 
     if(document.body.classList.contains('dark-theme'))
     {
-        darkBtn.src = "./image/light.png"
-        darkBtn.classList.add('light')
+        darkBtn.style.visibility = "hidden"
+        sun.style.visibility = 'visible'
     }
     else
     {
-        darkBtn.src = "./image/dark.png"
-        darkBtn.classList.add('dark')
+        darkBtn.style.visibility = "visible"
+        sun.style.visibility = 'hidden'
+    }
+    sun.onclick = () => 
+    {
+        document.body.classList.remove('dark-theme')
+        darkBtn.style.visibility = "visible"
+        sun.style.visibility = 'hidden'
     }
 })
 

@@ -281,6 +281,18 @@
     font-size: 12px;
     font-style: normal;
   }
+  @media screen and (max-width: 600px) {
+    .contents .messages .message-content{
+      height: auto;
+      width: 110%;
+      background: #26233e;
+      overflow-y: auto;
+      padding: 0px;
+    }
+    .contents .message-content::-webkit-scrollbar{
+      width: 0px;
+    }
+  }
   @media screen and (max-width: 900px) {
     .side-bar{
       width: 10%;

@@ -514,4 +514,7 @@ form .inputs input[type=submit]{
       top: 10%;
       left: 60%;
     }
+    .contents .settings form{
+      background: none;
+    }
   }

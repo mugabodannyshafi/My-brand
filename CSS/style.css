@@ -132,14 +132,6 @@ hr{
   color: #fff;
   text-decoration: none;
 }
-.menu img{
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  height: 40px;
-  margin-right: 1.5rem;
-  margin-top: 7px;
-}
 .menu a.active{
   color: var(--clr-black);
 }
@@ -166,7 +158,25 @@ hr{
   --clr-hire: #20272e;
   --dark-shadow: var(--light-shadow)
 }
-
+.menu .fa-moon{
+  color: var(--clr-skyblue);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-right: 1.5rem;
+  margin-top: 15px;
+  font-size: 25px
+}
+.menu .fa-sun{
+  color: var(--clr-skyblue);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-right: 1.5rem;
+  margin-top: 15px;
+  font-size: 25px;
+  visibility: hidden;
+}
 .light{
   height: 30px;
   margin-top: 12px;

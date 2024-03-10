@@ -266,8 +266,6 @@
     border: none;
     background: var(--clr-skyblue);
     float: right;
-    position: fixed;
-    right: 40px;
     z-index: 1;
     color: var(--clr-white);
     cursor: pointer;
@@ -472,6 +470,33 @@
       top: 10%;
       left: 60%;
     }
+    .contents .articles{
+      margin-top: 20px;
+      width: 100%;
+      position: relative;
+      height: 100%;
+    }
+    .contents .articles::-webkit-scrollbar{
+      width: 0px;
+    }
+    .contents .articles::-webkit-scrollbar-track{
+      background: #d1e5ff;
+    }
+    .contents .articles::-webkit-scrollbar-thumb{
+      background: #1b192e;
+      transition: .5s;
+    }
+    .contents .articles::-webkit-scrollbar-thumb:hover{
+      background: #2e2b4e;
+    }
+    .blogs{
+      margin-top: 50px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      position: relative;
+      }
   }
   .modal-overlay {
     position: fixed;
@@ -486,28 +511,33 @@
     transition: var(--transition);
     opacity: 0;
     z-index: -1;
-  }
-  .modal-overlay.open-modal {
+}
+
+.modal-overlay.open-modal {
     opacity: 1;
     z-index: 1;
-  }
-  .modal-container {
+}
+
+.modal-container {
     background: #181c2d;
     border-radius: var(--radius);
     width: 50%;
     height: 80%;
     position: relative;
-  }
-  .modal-container form{
+}
+
+.modal-container form {
     display: grid;
     place-content: center;
     margin-top: 20%;
-  }
-  .modal-container form h3{
+}
+
+.modal-container form h3 {
     color: #bdbec0;
     text-align: center;
-  }
-  .modal-container form input{
+}
+
+.modal-container form input {
     width: 300px;
     margin-top: 20px;
     height: 35px;
@@ -517,7 +547,22 @@
     color: var(--clr-white);
     outline: none;
     padding: 10px;
-  }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-container {
+        width: 90%; 
+        height: 40%;
+    }
+    
+    .modal-container form {
+        margin-top: 10%;
+    }
+
+    .modal-container form input {
+        width: 100%;
+    }
+}
   .modal-container form input[type="submit"]{
     background: var(--clr-skyblue);
     cursor: pointer;
