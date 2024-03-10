@@ -1,6 +1,5 @@
    
     document.addEventListener('DOMContentLoaded', () =>{
-        console.log('document loaded')
     const user = document.getElementById('user')
     const pass = document.getElementById('pass')
     const link = document.getElementById('admin-link')
@@ -13,14 +12,13 @@
     button.style.background = '#BBBBBB'
     button.style.cursor = 'not-allowed'
     button.disabled = true
-    link.style.pointerEvents = 'none'
 
    }
    else{
     button.style.cursor = 'pointer'
     button.style.background = '#21A5EE'
     button.disabled = true
-    link.style.pointerEvents = 'auto'
+    link.href = './Admin/admin-index.html'
    }
     })
     pass.addEventListener('input', () => {
@@ -29,13 +27,12 @@
          button.style.background = '#BBBBBB'
          button.style.cursor = 'not-allowed'
          button.disabled = true
-         link.style.pointerEvents = 'none'
         }
         else{
          button.style.cursor = 'pointer'
          button.style.background = '#21A5EE'
          button.disabled = false
-         link.style.pointerEvents = 'auto'
+         link.href = './Admin/admin-index.html'    
         }
          })
         })

@@ -156,7 +156,6 @@ hr{
   --clr-big-white: #20272e;
   --clr-grey-white: #bbbbbb;
   --clr-hire: #20272e;
-  --dark-shadow: var(--light-shadow)
 }
 .menu .fa-moon{
   color: var(--clr-skyblue);
@@ -449,7 +448,7 @@ gap: 20px;
 }
 .skills .cards{
 margin-left: 20px;
-height: 20rem;
+height: 19rem;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -458,18 +457,20 @@ box-shadow: var(--dark-shadow);
 border-radius: 7px;
 }
 .skills .cards img{
-height: 70px;
+height: 50px;
 }
 .skills .cards span{
 font-size: 20px;
 font-weight: 500;
 color: var(--clr-black);
+margin-top: 10px;
 }
 .skills .cards p{
-font-size: 14px;
+font-size: 15px;
 margin-top: 15px;
 color: var(--clr-grey-white);
 line-height: 1.6;
+text-align: center;
 }
 .other-skills{
 display: grid;
@@ -816,15 +817,16 @@ footer{
   background: var(--clr-big-white);
   border-radius: var(--radius);
   width: 70%;
-  height: 80%;
+  height: 90%;
   text-align: center;
   position: relative;
+  overflow-y: scroll;
 }
 .modal-container img{
   position: absolute;
   left: 0;
   top: 0;
-  height: 80vh;
+  height: 90vh;
   width: 50%;
 }
 .modal-content{
@@ -833,14 +835,14 @@ footer{
   position: absolute;
   right: 0;
   color: var(--clr-black);
+  padding: 0px 10px 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0px 10px 0px;
 }
 .modal-content .blogsTitle{
   font-weight: 600;
   font-size: 1.5rem;
+  margin-top: 50px;
 }
 .modal-content .blog-description{
   margin-top: 15px;
@@ -899,7 +901,7 @@ footer{
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-red-dark);
+  color: #dc3545;
   cursor: pointer;
   transition: var(--transition);
   z-index: 1;

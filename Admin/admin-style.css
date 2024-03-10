@@ -104,13 +104,24 @@
   }
   .side-bar .operations .home{
     display: flex;
+    width: 80%;
+    height: 30px;
+    padding: 5px 0px 0px 30px
   }
-  .side-bar .operations #active span a{
-    color: #21A5EE;
-    font-weight: 600;
+  .side-bar .operations #active {
+    background: #2a527e;
+    border-radius: 5px;
+    border-left: 3px solid var(--clr-skyblue);
   }
-  .side-bar .operations .home img{
-    height: 23px;
+  .side-bar .operations #active a{
+    color: var(--clr-skyblue);
+  }
+  .side-bar .operations #active .img{
+    color: var(--clr-skyblue);
+  }
+  .side-bar .operations .home .img{
+    font-size: 19px;
+    color: #626071;
   }
   .side-bar .operations .home span a{
     padding: 5px 5px 5px 13px;
@@ -122,9 +133,14 @@
     display: flex;
     margin-top: 29px;
     cursor: pointer;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    padding: 5px 0px 0px 30px
   }
-  .side-bar .operations .articles img{
-    height: 23px;
+  .side-bar .operations .articles .img{
+    font-size: 19px;
+    color: #626071;
   }
   .side-bar .operations .articles span a{
     padding: 5px 5px 5px 13px;
@@ -136,9 +152,14 @@
     display: flex;
     margin-top: 29px;
     cursor: pointer;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    padding: 5px 0px 0px 30px
   }
-  .side-bar .operations .messages img{
-    height: 23px;
+  .side-bar .operations .messages .img{
+    font-size: 19px;
+    color: #626071;
   }
   .side-bar .operations .messages span a{
     padding: 5px 5px 5px 13px;
@@ -150,9 +171,14 @@
     display: flex;
     margin-top: 29px;
     cursor: pointer;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    padding: 5px 0px 0px 30px
   }
-  .side-bar .operations .setting img{
-    height: 23px;
+  .side-bar .operations .setting .img{
+    font-size: 19px;
+    color: #626071;
   }
   .side-bar .operations .setting span a{
     padding: 5px 5px 5px 13px;
@@ -165,6 +191,10 @@
     position: absolute;
     bottom: 10px;
     cursor: pointer;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    padding: 5px 0px 0px 30px
   }
   .side-bar .operations .logout img{
     height: 23px;
