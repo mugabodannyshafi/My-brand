@@ -21,7 +21,12 @@ menuBtn.onclick = () => {
 }
 
 const modelBtn = document.getElementById('button')
-
+const displayMessage = (action) =>{
+    action.style.display = 'block';
+     setTimeout(() =>{
+        action.style.display = 'none';
+     }, 1200);
+  }
 modelBtn.addEventListener('click', () => {
     const modal = document.querySelector('.modal-overlay')
     const closeBtn = document.querySelector('.close-btn')
@@ -29,6 +34,24 @@ modelBtn.addEventListener('click', () => {
     
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('open-modal')
+    })
+
+    const title = modal.querySelector('#title')
+    const description = modal.querySelector('#description')
+    const image = modal.querySelector('#image')
+    const addBtn = modal.querySelector('#addBtn')
+    const errMsg = modal.querySelector('#error')
+    const form = modal.querySelector('#form')
+
+    addBtn.addEventListener('click', () =>
+    {
+        if(title.value.trim() === '' || description.value.trim() === '' || image.value.trim() === '')
+        {
+            displayMessage(errMsg)
+        }
+        else{
+            form.action = "./articles.html";
+        }
     })
 
     window.addEventListener('click', (e) =>
@@ -39,4 +62,5 @@ modelBtn.addEventListener('click', () => {
             }
           })
 })
+
 

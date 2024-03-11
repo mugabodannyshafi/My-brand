@@ -341,9 +341,10 @@
     margin-top: 10px;
     cursor: pointer;
   }
-  .contents .queries .see-all-messages span{
+  .contents .queries .see-all-messages span a{
     color: var(--clr-skyblue);
     opacity: 0.6;
+    text-decoration: none;
   }
   .contents .queries .see-all-messages img{
     height: 15px;
