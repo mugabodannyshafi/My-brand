@@ -17,26 +17,33 @@
     </head>
     <body>
         <div class="container">
-            <div class="Side-image">
-            </div>
-            <div class="contents">
-                <div class="logo">
-                    <a href="index.html">my <span>brand</span></a>
-                </div>
-                <div class="header">
-                    <span>welcome back!</span>
-                </div>
-                <div class="inputs">
-                    <input type="email" name="" id="user" placeholder="email">
-                    <input type="password" id="pass" placeholder="Password">
-                </div>
-
-                <div class="sign-up">
-                   <a id="admin-link" href="#"> <button id="button">sign in</button></a>
-                </div>
-                <div class="have-account">
-                    <span>Don't have an account?</span><a href="sign-up.html">Sign up</a>
-                </div>
+            <div class="logo">
+                <a href="index.html"> my <span>brand</span></a>
+             </div>
+            <div class="login-form">
+                 <div class="login-title">
+                    Welcome back!
+                 </div>
+                 <p>please enter your account details.</p>
+                 <div class="inputs">
+                    <div class="form-inputs">
+                        <label for="Email">Email</label>
+                    <input type="email" id="user" placeholder="Enter your email">
+                    </div>
+                    <div class="form-inputs">
+                        <label for="password">Password</label>
+                        <input type="password" id="pass" placeholder="Enter your password">
+                    </div>
+                    <div class="forgot">
+                        forgot password
+                    </div>
+                    <div class="button">
+                        <a id="admin-link" href="#"><button id="button">Sign in</button></a>
+                    </div>
+                    <div class="dont-have">
+                        Don't have an account? <a href="./sign-up.html">Sign up</a>
+                    </div>
+                 </div>
             </div>
         </div>
         <script src="./Js/sign-in.js"></script>
