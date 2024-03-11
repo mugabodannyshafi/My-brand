@@ -302,7 +302,7 @@ hr{
   margin-top: 10px;
 }
 .about-me .my-names .social a{
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin-left: 12px;
   color: #9340FB;
 }
@@ -318,9 +318,7 @@ hr{
   display: flex;
   font-weight: 100;
   margin-top: 10px;
-  background: linear-gradient(to right,var(--clr-skyblue),#9340FB);
-  background-clip: text;
-  color: transparent;
+  color: var(--clr-skyblue);
   margin-left: 31%;
 }
 .about-me .profile span{
@@ -817,16 +815,15 @@ footer{
   background: var(--clr-big-white);
   border-radius: var(--radius);
   width: 70%;
-  height: 90%;
+  height: 70%;
   text-align: center;
   position: relative;
-  overflow-y: scroll;
 }
 .modal-container img{
   position: absolute;
   left: 0;
   top: 0;
-  height: 90vh;
+  height: 70vh;
   width: 50%;
 }
 .modal-content{
@@ -862,12 +859,12 @@ footer{
 }
 .modal-content .likes{
   display: flex;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-left: 10px;
   font-weight: 600;
 }
 .modal-content .fa-regular{
-  font-size: 25px;
+  font-size: 15px;
   margin-left: 10px;
   margin-top: 10px;
   cursor: pointer;
@@ -885,6 +882,9 @@ footer{
   color: var(--clr-black);
   padding: 10px;
 }
+.modal-content .write-comment input:focus{
+  border-bottom: 1.5px solid #675c9c;
+}
 .modal-content .write-comment button{
   height: 30px;
   width: 100px;
@@ -893,6 +893,10 @@ footer{
   border: none;
   color: #fff;
   cursor: pointer;
+  border-radius: 4px;
+}
+.modal-content .write-comment button:hover{
+  background: #584f85;
 }
 .close-btn {
   position: absolute;
