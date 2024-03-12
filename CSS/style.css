@@ -89,7 +89,7 @@ svg{
 .menu{
   width: 100%;
   height: 60px;
-  background: var(--clr-big-white);
+  background: var(--clr-background);
   position: fixed;
   top: 0;
   z-index: 111;
