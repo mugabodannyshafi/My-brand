@@ -20,7 +20,7 @@
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
-  --clr-big-white: #ffffff;
+  --clr-big-white: #20272e;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
@@ -28,10 +28,10 @@
   --clr-black: #1b2127;
   --clr-pink: #A140FD;
   --clr-skyblue: #21A5EE;
-  --clr-background: #F4F7FC;
-  --clr-grey-white: #87888B;
+  --clr-background: #1b2127;
+  --clr-grey-white: #bbbbbb;
   --clr-dark-background: #303030;
-  --clr-hire: #3C3633;
+  --clr-hire: #20272e;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
@@ -41,6 +41,7 @@
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --fieldset-color: #252d36;
 }
 *{
   margin: 0px;
@@ -79,7 +80,7 @@ svg{
   text-transform: uppercase;
   position: fixed;
   top: 0;
-  color: var(--clr-black);
+  color: var(--clr-white);
   cursor: pointer;
 }
 .logo span{
@@ -133,7 +134,7 @@ hr{
   text-decoration: none;
 }
 .menu a.active{
-  color: var(--clr-black);
+  color: var(--clr-white);
 }
 .active-link {
   color: #fff;
@@ -151,11 +152,12 @@ hr{
   z-index: 222;
 }
 .dark-theme{
-  --clr-background: #1b2127;
-  --clr-black: #fff;
-  --clr-big-white: #20272e;
-  --clr-grey-white: #bbbbbb;
-  --clr-hire: #20272e;
+  --clr-background: #F4F7FC;
+  --clr-white: #000;
+  --clr-big-white: #ffffff;
+  --clr-grey-white: #87888B;
+  --clr-hire: #3C3633;
+  --fieldset-color: #f0eeee;
 }
 .menu .fa-moon{
   color: var(--clr-skyblue);
@@ -280,27 +282,22 @@ hr{
   }
 }
 .about-me .my-names .hey{
-  font-size: 2rem;
-  color: var(--clr-black);
+  font-size: 1.2rem;
+  color: var(--clr-white);
 }
 .about-me .my-names .names{
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--clr-skyblue);
   display: flex;
   font-weight: 100;
   margin-top: 10px;
-}
-.about-me .my-names .title{
-  font-size: 1rem;
-  color: var(--clr-grey-white);
-  margin-top: 10px;
-}
+} 
 .about-me .my-names .social{
   margin-top: 10px;
 }
 .about-me .my-names .social a{
-  font-size: 1rem;
-  margin-left: 12px;
+  font-size: 1.2rem;
+  margin-left: 10px;
   color: var(--clr-skyblue);
 }
 .about-me .profile img{
@@ -310,36 +307,41 @@ hr{
   border-radius:   56% 44% 45% 55% / 41% 30% 70% 59%;
 }
 .about-me .profile .who{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   display: flex;
   font-weight: 100;
   margin-top: 10px;
   color: var(--clr-skyblue);
-  margin-left: 31%;
+  margin-left: 35%;
 }
 .about-me .profile span{
  font-weight: 200;
  line-height: 1.6;
- font-size: 1.1rem;
- text-align: center;
+ letter-spacing: 1px;
+ font-size: 1rem;
  padding-left: 2rem 0px 0px 0px;
- color: var(--clr-black);
+ color: var(--clr-white);
  margin-top: 20px;
 }
 @media screen and (max-width: 450px) {
   .about-me .my-names .hey{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .about-me .my-names .names{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .about-me .profile img{
     margin-left: 25%;
   }
   .about-me .profile .who{
-    margin-left: 19%;
-    font-size: 2rem;
+    margin-left: 25%;
+    font-size: 1.5rem;
+  }
+  .about-me .profile span{
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    line-height: 2;
   }
   .about-me .profile{
     padding: 0px 0px 0px;
@@ -355,20 +357,23 @@ hr{
   display: flex;
 }
 .about-me .intro .introduction{
-  margin-left: 12rem;
-  font-size: 1.9rem;
+  margin-left: 17rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   color: var(--clr-grey-white);
 }
 .about-me .intro .title{
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-top: 12px;
-  color: var(--clr-black);
+  color: var(--clr-white);
 }
 .about-me .intro .text{
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin-top: 15px;
   color: var(--clr-grey-white);
+  text-align: center;
 }
 .about-me .intro p{
   color: #fff;
@@ -382,14 +387,15 @@ hr{
 @media screen and (max-width: 470px) {
   .about-me .intro .introduction{
     margin-left: 5rem;
+    font-size: 1.5rem;
   }
   .about-me .intro .title{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 .cv{
   margin-top: 17rem;
-  margin-left: 35rem;
+  margin-left: 32rem;
 }
 .cv button{
   height: 40px;
@@ -433,6 +439,15 @@ hr{
     margin-left: 7rem;
   }
 }
+ .title{
+  font-size: 1.5rem;
+  color: var(--clr-skyblue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 100;
+  margin-top: 30px;
+}
 .skills{
 padding-right: 10px;
 margin-top: 20px;
@@ -457,7 +472,7 @@ height: 50px;
 .skills .cards span{
 font-size: 20px;
 font-weight: 500;
-color: var(--clr-black);
+color: var(--clr-white);
 margin-top: 10px;
 }
 .skills .cards p{
@@ -514,7 +529,7 @@ padding: 5px;
 border-radius: 50px;
 text-align: center;
 cursor: pointer;
-color: var(--clr-black);
+color: var(--clr-white);
 }
 .works .projects a{
 position: absolute;
@@ -543,7 +558,7 @@ box-shadow: var(--dark-shadow);
 }
 }
 .blog-title{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--clr-skyblue);
   display: flex;
   flex-direction: column;
@@ -574,7 +589,7 @@ font-size: 20px;
 font-weight: 600;
 text-align: center;
 margin-top: 10px;
-color: var(--clr-black);
+color: var(--clr-white);
 }
 .blogs .blog-cards p{
 font-size: 14px;
@@ -625,7 +640,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 font-size: 2rem;
-color: var(--clr-white);
+color: #fff;
+}
+.hire .title{
+  color: #fff;
 }
 .hire button{
 margin: 40px;
@@ -635,11 +653,11 @@ cursor: pointer;
 color: white;
 border: none;
 background: transparent;
-border: 1.5px solid var(--clr-white);
+border: 1.5px solid white;
 transition: .5s;
 }
 .hire button:hover{
-background: var(--clr-white);
+background: white;
 color: #000;
 }
 @media screen and (max-width: 420px) {
@@ -649,7 +667,7 @@ color: #000;
 }
 }
 .contacts-title{
-font-size: 2rem;
+font-size: 1.5rem;
 color: var(--clr-skyblue);
 display: flex;
 flex-direction: column;
@@ -686,7 +704,7 @@ height: 105px;
 margin-top: 20px;
 }
 .contacts input{
-  color: var(--clr-black);
+  color: var(--clr-white);
   padding: 10px;
   border: 1px solid #87888B;
   outline: none;
@@ -701,7 +719,7 @@ border: 1.5px solid #675C9C;
   border: 1px solid #87888B;
   outline: none;
   padding: 10px;
-  color: var(--clr-black);
+  color: var(--clr-white);
   border-radius: 3px;
   background: transparent;
 }
@@ -748,7 +766,7 @@ align-items: center;
 margin-top: 3rem;
 letter-spacing: 1.5px;
 text-align: center;
-color: var(--clr-black);
+color: var(--clr-white);
 }
 footer{
 height: 8rem;
@@ -759,7 +777,7 @@ padding: 0px 0px 0px 40%;
 }
 footer .text{
 padding: 23px 0px 0px 15px;
-color: var(--clr-white);
+color: #fff;
 }
 footer img{
 margin-top: 25px;
@@ -803,34 +821,41 @@ footer{
   background: var(--clr-big-white);
   border-radius: var(--radius);
   width: 70%;
-  height: 70%;
+  height: 90%;
   text-align: center;
   position: relative;
+  overflow-y: scroll;
+  padding: 20px;
+}
+.modal-container::-webkit-scrollbar{
+  width: 11px;
+}
+.modal-container::-webkit-scrollbar-track{
+  background: #d1e5ff;
+}
+.modal-container::-webkit-scrollbar-thumb{
+  background: #4b5767;
+  transition: .5s;
+}
+.modal-container::-webkit-scrollbar-thumb:hover{
+  background: #2e353f;
 }
 .modal-container img{
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 70vh;
+  height: 50vh;
   width: 50%;
 }
 .modal-content{
-  height: 80vh;
-  width: 50%;
-  position: absolute;
-  right: 0;
-  color: var(--clr-black);
+  width: 100%;
+  color: var(--clr-white);
   padding: 0px 10px 0px;
-  display: flex;
-  flex-direction: column;
 }
 .modal-content .blogsTitle{
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-top: 50px;
 }
 .modal-content .blog-description{
-  margin-top: 15px;
+  margin-top: 3rem;
   color: var(--clr-grey-white);
   line-height: 1.6;
 }
@@ -856,36 +881,18 @@ footer{
   margin-left: 10px;
   margin-top: 10px;
   cursor: pointer;
+  transition: .5s ease-in-out;
 }
-.modal-content .write-comment{
-  margin-top: 20px;
-}
-.modal-content .write-comment input{
-  height: 30px;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid var(--clr-black);
-  width: 70%;
-  background: transparent;
-  color: var(--clr-black);
-  padding: 10px;
-}
-.modal-content .write-comment input:focus{
-  border-bottom: 1.5px solid #675c9c;
-}
-.modal-content .write-comment button{
-  height: 30px;
-  width: 100px;
+.modal-content .fa-solid{
+  font-size: 15px;
   margin-left: 10px;
-  background: #675c9c;
-  border: none;
-  color: #fff;
+  margin-top: 10px;
   cursor: pointer;
-  border-radius: 4px;
+  color: red;
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
 }
-.modal-content .write-comment button:hover{
-  background: #584f85;
-}
+
 .close-btn {
   position: absolute;
   top: 1rem;
@@ -904,7 +911,7 @@ footer{
 }
 .mobile-likes{
   position: absolute;
-  color: var(--clr-black);
+  color: var(--clr-white);
   left: 0;
   bottom: 10px;
   visibility: hidden;
@@ -914,7 +921,7 @@ footer{
   font-size: 15px;
   margin-left: 10px;
 }
-.mobile-likes .fa-regular{
+.mobile-likes .fa-heart{
   margin-left: 10px;
   font-size: 1.3rem;
 }
@@ -927,18 +934,35 @@ footer{
   font-size: 20px;
   margin-left: 5px;
   padding: 5px;
-  color: var(--clr-black);
+  color: var(--clr-white);
 }
 @media screen and (max-width: 800px) {
   .modal-overlay{
-    visibility: hidden;
+    visibility: visible;
   }
   .img-hover{
-    display: none;
+    display: block;
   }
-  
+  .modal-container {
+    width: 90%;
+    height: 50%;
+    padding: 20px;
+  }
+  .write-comment .form-group input{
+    width: 100%;
+  }
+  .write-comment .form-group textarea{
+    width: 100%;
+  }
+  .modal-container img{
+    height: 20vh;
+    width: 95%;
+  }
+  .modal-content .write-comment button{
+    margin-top: 20px;
+  }
   .mobile-likes{
-    visibility: visible ;
+    visibility: hidden ;
   }
   .blogs .blog-cards{
     height: 32rem;
@@ -958,4 +982,175 @@ footer{
     margin-bottom: 15px;
     padding: 0px;
     }
+}
+
+main{
+  display: grid;
+  place-content: center;
+}
+main .inputs{
+  position: relative;
+  padding: 20px;
+  padding-left: 30px;
+  width: 100%;
+  height: auto;
+}
+main .inputs input[type=password]{
+  margin-top: 25px;
+}
+main .inputs input[type=submit]{
+margin-top: 25px;
+border: none;
+background: var(--clr-skyblue);
+color: var(--clr-white);
+cursor: pointer;
+font-size: 15px;
+}
+.form-group{
+  position: relative;
+}
+.form-group input{
+  padding-bottom: 5px;
+  font-size: 10px;
+  width: 400px;
+  border:none;
+  background: transparent;
+  color: var(--clr-white);
+  transition: 0.15s all ease;
+  outline: none;
+  height: 35px;
+  border: 1.5px solid #9594a1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+.form-group textarea{
+  font-size: 16px;
+  width: 400px;
+  background: transparent;
+  border:none;
+  transition: 0.15s all ease;
+  border: 1.5px solid #9594a1;
+  padding: 10px;
+  border-radius: 3px;
+  resize: none;
+  margin-top: 23px;
+  height: 50px;
+  color: var(--clr-white);
+  outline: none;
+  padding: 10px;
+}
+.form-group input:focus{
+  border: 1px solid var(--clr-skyblue);
+}
+.form-group textarea:focus{
+  border: 1px solid var(--clr-skyblue);
+}
+main .inputs input[type=submit]{
+  color: #fff;
+}
+
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label {
+  transform: translate(5px, -22px) scale(0.9);
+  font-size: 17px;
+  color: var(--clr-black);
+}
+.form-group textarea:focus + #form-label,
+.form-group textarea:not(:placeholder-shown) + #form-label {
+  transform: translate(5px, -22px) scale(0.9);
+  font-size: 17px;
+  color: var(--clr-black);
+}
+.form-group .form-label{
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-size: 13px;
+  color: grey;
+  pointer-events: none;
+  transition: 0.15s all ease;
+}
+.form-group #form-label{
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  font-size: 13px;
+  color: grey;
+  pointer-events: none;
+  transition: 0.15s all ease;
+}
+
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label {
+  top: 15px;
+  font-size: 13px;
+  color: grey;
+  left: 0;
+  background: var(--clr-big-white);
+  padding: 0px 5px 0px;
+}
+.form-group textarea:focus + #form-label,
+.form-group textarea:not(:placeholder-shown) + #form-label {
+  top: 40px;
+  left: 0;
+  font-size: 13px;
+  color: grey;
+  background: var(--clr-big-white);
+  padding: 0px 5px 0px;
+}
+.list{
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.commentsDiv{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.myNames{
+  color: var(--clr-white);
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.myComment{
+  color: var(--clr-grey-white);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+fieldset{
+  border: 0.5px solid var(--fieldset-color);
+  padding: 10px;
+  position: relative;
+  padding-right: 50px;
+}
+legend{
+  padding: 0px 8px 2px 0px;
+}
+.myDates{
+ font-size: 9px;
+ color: grey;
+ position: absolute;
+ right: 10px;
+ top: 10px;
+}
+@media screen and (max-width: 500px) {
+  fieldset{
+  width: 100%;
+  }
+  .myDates{
+    font-size: 9px;
+    color: grey;
+    position: static;
+    margin-top: 8px;
+   }
+   .list{
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+  .number-of-comment{
+    margin-top: 5px;
+  }
 }

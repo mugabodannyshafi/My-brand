@@ -52,6 +52,9 @@ body{
   justify-content: center;
   align-items: center;
 }
+.container{
+  display: flex;
+}
 .container .logo{
   position: absolute;
   left: 0;
@@ -73,8 +76,7 @@ body{
   width: 22rem;
   background: #1f2a37;
   border-radius: 15px;
-  padding: 3rem 14px 0px 14px;
-
+  padding: 3rem 14px 0px 14px;  
 }
 .container .login-form .login-title{
  color: var(--clr-white);
@@ -123,8 +125,8 @@ body{
   border: none;
   border-radius: 5px;
   color: var(--clr-white);
-  background: #438db5;
-  cursor: not-allowed;
+  background: var(--clr-skyblue);
+  cursor: pointer;
 }
 .container .login-form .inputs .dont-have{
   text-align: center;
@@ -135,4 +137,34 @@ body{
 .container .login-form .inputs .dont-have a{
   color: #999ca3;
   text-decoration: none;
+}
+.container .check-list{
+  height: 15rem;
+  width: 13rem;
+  border-radius: 20px;
+  background: #4c667e;
+  margin-left: 3rem;
+  margin-top: 8rem;
+  padding: 15px;
+}
+.container .check-list ul span{
+  font-size: 15px;
+}
+.container .check-list ul li{
+  list-style: none;
+  font-size: 15px;
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .container .login-form{
+    padding: 3rem 14px 0px 14px;  
+  }
+  .container .check-list{
+    margin-top: 1rem;
+  }
 }
