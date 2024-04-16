@@ -123,8 +123,8 @@ body{
   border: none;
   border-radius: 5px;
   color: var(--clr-white);
-  background: #438db5;
-  cursor: not-allowed;
+  background: var(--clr-skyblue);
+  cursor: pointer;
 }
 .container .login-form .inputs .dont-have{
   text-align: center;
@@ -135,4 +135,50 @@ body{
 .container .login-form .inputs .dont-have a{
   color: #999ca3;
   text-decoration: none;
+}
+#model{
+  background: #f8d7da;
+  position: absolute;
+  top: 10%;
+  right: 0;
+  transform: translate(-50%,-50%);
+  height: 35px;
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation-name: animateModel;
+  animation-duration: .5s;
+  border-radius: 5px;
+  color: #721c24;
+}
+#close{
+  color: tomato;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 23px;
+  transition: .2s;
+}
+#close:hover{
+  transform: scale(1.1);
+}
+#model-container{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+@keyframes animateModel {
+  from{
+  top: -300px;
+  opacity: 0;
+  }
+  to{
+      top: 10%;
+      opacity: 1;
+  }
 }

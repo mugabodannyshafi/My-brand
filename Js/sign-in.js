@@ -1,37 +1,40 @@
    
     document.addEventListener('DOMContentLoaded', () =>{
-        const user = document.getElementById('user')
-        const pass = document.getElementById('pass')
-        const link = document.getElementById('admin-link')
-        const button = document.getElementById('button')
 
-        user.addEventListener('input', () => {
-       if(user.value.trim() === '' || pass.value.trim() === '')
-       {
-        button.style.background = '#438db5'
-        button.style.cursor = 'not-allowed'
-        button.disabled = true
-    
-       }
-       else{
-        button.style.cursor = 'pointer'
-        button.style.background = '#21A5EE'
-        button.disabled = true
-        link.href = './Admin/admin-index.html'
-       }
-        })
-        pass.addEventListener('input', () => {
-            if(pass.value.trim() === '' || user.value.trim() === '')
-            {
-             button.style.background = '#438db5'
-             button.style.cursor = 'not-allowed'
-             button.disabled = true
+
+            const email = 'mugabodannyshafi@gmail.com'
+            const adminPassword = 'dANNY1234@'
+            const users = {
+                username: email,
+                password: adminPassword
             }
-            else{
-             button.style.cursor = 'pointer'
-             button.style.background = '#21A5EE'
-             button.disabled = false
-             link.href = './Admin/admin-index.html'    
-            }
-             })
-            })
+            
+            const myUsers = JSON.parse(localStorage.getItem('users')) || []
+            myUsers.push(users)
+            localStorage.setItem('users', JSON.stringify(myUsers))
+
+ const username = document.getElementById('user')
+ const userPassword = document.getElementById('pass')
+ let modelContainer = document.getElementById('model-container')
+let close = document.getElementById('close')
+const link = document.getElementById('admin-link')
+  button.addEventListener('click', () =>{
+    if(username.value.trim() !== users.username && userPassword.value.trim() !== users.password)
+  {
+    modelContainer.style.display = 'block';
+    close.addEventListener('click', function()
+    {
+        modelContainer.style.display = 'none'
+    })
+  }
+ else{
+    window.location.href = './Admin/admin-index.html'
+ }
+})
+window.addEventListener('click', function(x){
+  if(x.target === modelContainer)
+  {
+   modelContainer.style.display = 'none'
+  }
+})
+})
