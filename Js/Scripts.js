@@ -24,28 +24,39 @@ window.onscroll = () => {
         }
     })
 }
-const darkBtn = document.getElementById("dark")
-darkBtn.addEventListener("click", () =>{
-    const sun = document.querySelector('.fa-sun')
-    document.body.classList.toggle('dark-theme')
+const darkBtn = document.getElementById("dark");
 
-    if(document.body.classList.contains('dark-theme'))
-    {
-        darkBtn.style.visibility = "hidden"
-        sun.style.visibility = 'visible'
+darkBtn.addEventListener("click", () => {
+    let theme;
+    const sun = document.querySelector('.fa-sun');
+    document.body.classList.toggle('dark-theme');
+
+    if (document.body.classList.contains('dark-theme')) {
+        darkBtn.style.visibility = "hidden";
+        sun.style.visibility = 'visible';
+        theme = 'LIGHT';
+        console.log('light mode');
+    } else {
+        darkBtn.style.visibility = "visible";
+        sun.style.visibility = 'hidden';
     }
-    else
-    {
-        darkBtn.style.visibility = "visible"
-        sun.style.visibility = 'hidden'
+
+    sun.onclick = () => {
+        document.body.classList.remove('dark-theme');
+        darkBtn.style.visibility = "visible";
+        sun.style.visibility = 'hidden';
     }
-    sun.onclick = () => 
-    {
-        document.body.classList.remove('dark-theme')
-        darkBtn.style.visibility = "visible"
-        sun.style.visibility = 'hidden'
-    }
-})
+
+    localStorage.setItem('theme', theme);
+});
+
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme && savedTheme === 'LIGHT') {
+    document.body.classList.add('dark-theme');
+}
+
+
 
 const scrollToTop = document.getElementById("scroll")
 
@@ -79,6 +90,41 @@ menuLinks.forEach(link => {
         menuBtn.style.color = "#21A5EE"
     });
 });
+const blogs = document.querySelector('.blogs')
+fetch('http://localhost:7000/blogs')
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+    console.log(data)
+    if(data.blogs.length <= 0)
+    {
+    const div = document.createElement('div')
+    div.classList.add('noArticles')
+    div.innerHTML = `<span>No articles found</span>`
+    blogs.appendChild(div)
+    }
+    else{
+  for(counter = 0; counter < data.blogs.length; counter++)
+  {
+    
+        const div = document.createElement('div')
+        
+        div.innerHTML = `<div class="blog-cards">
+        <div class="img-hover">
+            <i class="fa-solid fa-heart"></i>&nbsp; <span id="numLikes"></span>
+        </div>
+        <img class="modal-image" src="${data.blogs[counter].image}" alt="">
+        <span class="blogsTitle">${data.blogs[counter].title}</span>
+        <p class="blog-description">
+        ${data.blogs[counter].body}
+        </p>`
+            blogs.appendChild(div)
+    }
+  }
 const cardBtn = document.querySelectorAll('.blog-cards')
 for(let i = 0; i < cardBtn.length; i++)
 {
@@ -97,11 +143,14 @@ for(let i = 0; i < cardBtn.length; i++)
           const blogsTitle = cardBtn[i].querySelector('.blogsTitle')
           const cardTitle =blogsTitle.cloneNode(true) 
           modalContent.append(cardTitle)
-
+          const blogsId = document.createElement('span')
+          blogsId.classList.add('blogsId')
+          modalContent.append(blogsId)
+          blogsId.innerHTML = `This card's id: ${data.blogs[i]._id}`
           const blogsDescription = cardBtn[i].querySelector('.blog-description')
           const cardDescription =blogsDescription.cloneNode(true) 
           modalContent.append(cardDescription)
-
+          
           const line = document.createElement('div')
           line.classList.add('like-comment-line')
           modalContent.append(line)
@@ -115,22 +164,67 @@ document.body.appendChild(likeComment);
           likes.classList.add('likes')
           likes.innerHTML = "<b id='likeCount'>0 likes</b>"
 
-          const likeButton = document.getElementById('likeButton');
+const likeButton = document.getElementById('likeButton');
 let likeCount = 0;
 let isLiked = false;
 likeButton.addEventListener('click', () =>{
-    if (isLiked) {
-        likeCount--;
-        isLiked = false;
-        likeButton.className = 'fa-regular fa-heart'
-      } else {
-        likeCount++;
-        isLiked = true;
-        likeButton.className = 'fa-solid fa-heart'
-      }
-      document.getElementById("likeCount").innerText = likeCount + ' likes';
+    
+     async function likeBlog(){
+         let likedBlog = JSON.parse(localStorage.getItem("likedBlog")) || []
+         let action = ""
+         if(!likedBlog.find(blog => blog.id === data.blogs[i]._id)){
+           likedBlog.push({id:data.blogs[i]._id})
+           action = "like"
+           localStorage.setItem("likedBlog", JSON.stringify(likedBlog))
+      
+         }else{
+          const index = likedBlog.findIndex(blog => blog.id === data.blogs[i]._id)
+          likedBlog.splice(index, 1)
+          action = "unlike"
+          likeButton.className = 'fa-solid fa-heart'
+          localStorage.setItem("likedBlog", JSON.stringify(likedBlog))
+          }
+         await fetch(`http://localhost:7000/likes/${data.blogs[i]._id}`,{
+           method: "POST",
+           headers:{
+             "Content-Type": "application/json"
+           },
+           body: JSON.stringify({action:action})
+         }).then((res)=>{
+           if(!res.ok){
+             console.log("-------------->error here")
+           } return res.json()
+         }).then((data)=>{
+         console.log(data)
+         document.getElementById("likeCount").innerText = `${data.likes} likes`;
+            window.location.reload()
+         }).catch((error)=>{
+           console.log("------------------->",error.message)
+         })
+       
+      
+      
+       }
+       likeBlog()
 })
-
+fetch(`http://localhost:7000/likes/getLikes/${data.blogs[i]._id}`,{
+    method: "GET",
+    headers:{
+      "Content-Type": "application/json"
+    }
+  }).then((res)=>{
+    if(!res.ok){
+      console.log("-------------->error here")
+    } return res.json()
+  }).then((data)=>{
+  console.log(data)
+  document.getElementById("likeCount").innerText = `${data.likes} likes`;
+  if(data.likes > 0) {
+    likeButton.className = 'fa-regular fa-heart'
+  }
+  }).catch((error)=>{
+    console.log("------------------->",error.message)
+  })
           modalContent.append(likeComment)
           modalContent.append(likes)
 
@@ -159,39 +253,80 @@ const commentBtn = document.getElementById('commentBtn')
 const commentsDiv = document.createElement('div')
     commentsDiv.classList.add('commentsDiv')
     comment.append(commentsDiv)
-commentBtn.addEventListener('click', () => {
-          const myComments = {
-            user: userName.value,
-            comment: userComment.value,
-            id : i,
-            date: new Date()
-           }
-        const myComment = JSON.parse(localStorage.getItem('comments')) || []
-        myComment.push(myComments)
-        localStorage.setItem('comments', JSON.stringify(myComment))
-        console.log()
-    userComment.value = ''
-    userName.value = ''
+    
+commentBtn.addEventListener('click', async () => {
+          if(userName.value.trim() !== '' && userComment.value.trim() !== '')
+          {
+            const uComments = {
+                userName: userName.value,
+                comment: userComment.value
+            }
+       await fetch(`http://localhost:7000/${data.blogs[i]._id}/comment`, {
+        headers:{
+            "Content-Type": "application/json"
+        },
+        method: "POST",
+        body: JSON.stringify(uComments)
+    })
+    .then((response) => {
+        if(!response.ok) {
+            console.log("-------->Error")
+        }
+        return response.json()
+    })
+    .then((addComment) => {
+        console.log(addComment)
+        window.location.reload()
+    })
+    .catch((error) => {
+        console.log(error.message)
+    });
+        userComment.value = ''
+        userName.value = ''
+          }
+          else{
+            alert('that must be filled')
+          }
 })
-
-const Comment = JSON.parse(localStorage.getItem('comments')) || []
-let commentCounter = 0
-for(j = 0; j < Comment.length; j++)
+fetch(`http://localhost:7000/${data.blogs[i]._id}/findComment`,{
+    method: "GET"
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(commentData => {
+     console.log(commentData)
+    let commentCounter = 0
+    console.log(i)
+    let test = 0
+for(j = 0; j < commentData.comments.length; j++)
 {
-    if(Comment[j].id === i)
+    if(commentData.comments[j].blog._id === data.blogs[i]._id)
     {
+        console.log('yes')
         const li = document.createElement('fieldset')
         li.classList.add('list')
-        li.innerHTML =  `<legend class='myNames'>${Comment[j].user}</legend> <p class='myComment'>${Comment[j].comment}</p> \
-        <p class='myDates'>${Comment[j].date.slice(0, 10)}</p>`
+        li.innerHTML =  `<legend class='myNames'>${commentData.comments[j].username}</legend> <p class='myComment'>${commentData.comments[j].comment}</p> 
+        <p class='myDates'>${commentData.comments[j].date}</p>`
         commentsDiv.appendChild(li)
         commentCounter++;
     }
+    else{
+        console.log('NO')
+    }
+    test++
 }
 const numOfComment = document.createElement('p')
 numOfComment.classList.add('number-of-comment')
 commentsDiv.appendChild(numOfComment)
 numOfComment.innerHTML = commentCounter + ' comments'
+
+   }).catch((error) => {
+    console.log(error.message)
+   })
 
           modalContent.append(comment)
           modalContainer.append(modalContent)
@@ -211,3 +346,57 @@ numOfComment.innerHTML = commentCounter + ' comments'
           })
     })
 }
+}).catch((error) => {
+    console.log(error)
+})
+
+
+
+const contactEmail = document.getElementById('contactEmail')
+const contactNames = document.getElementById('contactNames')
+const contactPhone = document.getElementById('contactPhone')
+const contactMessage = document.getElementById('contactMessage')
+const contactBtn = document.getElementById('contactBtn')
+let modelContainer = document.getElementById('model-container')
+let closeBtn = document.getElementById('close')
+contactBtn.addEventListener('click', () => {
+    const contacts = {
+        fromEmail: contactEmail.value,
+        names: contactNames.value,
+        contact: contactPhone.value,
+        emailMessage: contactMessage.value,
+    }
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail.value)
+  if(emailValid && contactNames.value.trim() !== '' && contactPhone.value.trim() !== '' && contactMessage.value.trim() !== '')
+  {
+    fetch('http://localhost:7000/sendEmail', {
+        headers: {
+            "Content-Type": "application/json"
+        },
+        method: "POST",
+        body: JSON.stringify(contacts)
+    }).then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+console.log(data)
+contactEmail.value = ''
+        contactNames.value = ''
+        contactPhone.value = ''
+        contactMessage.value = ''
+        modelContainer.style.display = 'block';
+    closeBtn.addEventListener('click', function()
+    {
+        modelContainer.style.display = 'none'
+    })
+}).then((error) => {
+    console.log('This is error', error)
+})
+  }
+  else{
+    alert('this is an error')
+  }
+})

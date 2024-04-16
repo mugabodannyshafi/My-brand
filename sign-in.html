@@ -20,6 +20,7 @@
             <div class="logo">
                 <a href="index.html"> my <span>brand</span></a>
              </div>
+             <form onsubmit="adminLogin(event)">
             <div class="login-form">
                  <div class="login-title">
                     Welcome back!
@@ -38,17 +39,18 @@
                         forgot password
                     </div>
                     <div class="button">
-                        <a id="admin-link" href="#"><button id="button">Sign in</button></a>
+                        <a id="admin-link" href=""><button type="submit" id="button">Sign in</button></a>
                     </div>
                     <div class="dont-have">
                         Don't have an account? <a href="./sign-up.html">Sign up</a>
                     </div>
                  </div>
             </div>
+        </form>
         </div>
         <div id="model-container">
             <div id="model">
-                <p>Incorrect email or password</p>
+                <p>Credentials submitted are not valid.</p>
                 <div id="close">&times</div>
             </div>
         </div>

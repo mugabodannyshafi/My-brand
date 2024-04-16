@@ -19,3 +19,22 @@ menuBtn.onclick = () => {
         menuBtn.style.visibility = 'visible'
     })
 }
+const localUser = JSON.parse(localStorage.getItem('name')) || []
+  const roleUser = document.querySelector('.name')
+  roleUser.innerHTML = `${localUser}`
+  
+  const spanName = document.querySelector('.span-name')
+  spanName.innerHTML = `${localUser}`
+  const details = document.querySelector('.details');
+
+activeUser.addEventListener('mouseover', () => {
+    details.style.visibility = 'visible';
+});
+
+details.addEventListener('mouseover', () => {
+    details.style.visibility = 'visible';
+});
+
+details.addEventListener('mouseout', () => {
+    details.style.visibility = 'hidden';
+});

@@ -14,13 +14,13 @@
         <div class="side-bar">
             <div class="logo">
                 <div class="text-logo">
-                    <b>my</b><span> Brand</span>
+                <b>my</b><span> Brand</span>
                 </div>
-            </div>
-            <div class="profile-picture">
-                <img src="../image/profile-3.jpeg" alt="">
-                <p class="name">MUGABO Shafi</p>
-                <p class="role">Admin Panel</p>
+                </div>
+                <div class="profile-picture">
+                <img src="../image/mucyo.png" alt="">
+                <p class="name"></p>
+                <p class="role">Administrator</p>
             </div>
             <div class="operations">
                 <div class="home" id="active">
@@ -55,29 +55,49 @@
             <div class="search-profile">
                 <input type="text" placeholder="Search">
                  <img class="search" src="../image/Search.png" alt="">
-                <img class="profile" src="../image/profile-3.jpeg" alt="">
+                 <div class="active-user">
+                    <img src="../image/down.png" alt="">
+                    <span class="span-name"></span>
+                 </div>
+                 <div class="details">
+                    <div class="userLogout">
+                        <a href="../sign-in.html">
+                        <img src="../image/log.png" alt="">
+                        <span>Logout</span>
+                    </a>
+                    </div>
+                    <div class="userSetting">
+                        <a href="settings.html">
+                        <i class="fa-solid fa-gear img"></i>
+                        <span>Setting</span>
+                    </a>
+                    </div>
+                 </div>
+                <img class="profile" src="../image/mucyo.png" alt="">
             </div>
             <div class="user">
                 <p class="homepage-title">Dashboard</p>
-                <p class="homepage-description">Hey, Shafi. Welcome to the admin panel!</p>
+                  <p class="homepage-description"></p>
             </div>
             <hr>
             <div class="queries">
                 <div class="queries-title">
-                    Queries from contact
+                    Messages from contact
                 </div>
-                <div class="message1">
-                    <img src="../image/mucyo.png" alt="">
-                    <p id="mucyo">UMUHUZA Shema Jimmy</p>
-                    <p id="message1">Hey, There✌</p>
-                </div>
-                <div class="message2">
-                    <img src="../image/mucyo.png" alt="">
-                    <p id="gloire">Ishimwe Gloire</p>
-                    <p id="message2">Your work is good man😎</p>
+                <div class="message-space">
+                    <div class="loader" id="loader">
+                        <div class="all">
+                      <div class="three-body">
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
+                        </div>
+                        <p>Loading Messages...</p>
+                      </div>
+                      </div>
                 </div>
                 <div class="see-all-messages">
-                    <span><a href="./messages.html">View all</a></span>
+                    <span><a href="./messages.html">View all <b id="message"></b></a></span>
                 </div>
             </div>
             <div class="articles">
@@ -85,23 +105,19 @@
                     Manage articles
                 </div>
                 <div class="blogs">
-                    <div class="blog-card">
-                        <img src="../image/blog1.png" alt="">
-                        <div class="texts">
-                            <span>Tips You Can Follow When You Design Website</span>
-                        <p>Here are 27 tips to design a well-structured website that can boost traffic and engage users:</p>
+                    <div class="loader" id="load">
+                        <div class="all">
+                      <div class="three-body">
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
                         </div>
-                    </div>
-                    <div id="blog2" class="blog-card">
-                        <img src="../image/blog2.png" alt="">
-                        <div class="texts">
-                            <span>Tips You Can Follow When You Design Website</span>
-                        <p>Here are 27 tips to design a well-structured website that can boost traffic and engage users:</p>
-                        </div>
-                    </div>
+                        <p>Loading Articles...</p>
+                      </div>
+                      </div>
                 </div>
                 <div class="view-all">
-                    <a href="./articles.html">View all</a>
+                    <span><a href="./articles.html">View all <b id="blog"></b></a></span>
                 </div>
             </div>
         </div>

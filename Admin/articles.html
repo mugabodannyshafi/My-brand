@@ -18,9 +18,9 @@
                 </div>
             </div>
             <div class="profile-picture">
-                <img src="../image/profile-3.jpeg" alt="">
-                <p class="name">MUGABO Shafi</p>
-                <p class="role">Admin Panel</p>
+                <img src="../image/mucyo.png" alt="">
+                <p class="name"></p>
+                <p class="role">Administrator</p>
             </div>
             <div class="operations">
                 <div class="home">
@@ -55,7 +55,25 @@
             <div class="search-profile">
                 <input type="text" placeholder="Search">
                  <img class="search" src="../image/Search.png" alt="">
-                <img class="profile" src="../image/profile-3.jpeg" alt="">
+                 <div class="active-user">
+                    <img src="../image/down.png" alt="">
+                    <span class="span-name"></span>
+                 </div>
+                 <div class="details">
+                    <div class="userLogout">
+                        <a href="../sign-in.html">
+                        <img src="../image/log.png" alt="">
+                        <span>Logout</span>
+                    </a>
+                    </div>
+                    <div class="userSetting">
+                        <a href="settings.html">
+                        <i class="fa-solid fa-gear img"></i>
+                        <span>Setting</span>
+                    </a>
+                    </div>
+                 </div>
+                 <img class="profile" src="../image/mucyo.png" alt="">
             </div>
             <div class="user">
                 <p class="homepage-title">Manage articles</p>
@@ -67,79 +85,23 @@
                     <button id="button">Add new</button>
                 </div>
                 <div class="blogs">
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
-                    <div class="blog-cards">
-                        <img class="modal-image" src="../image/blog1.png" alt="">
-                        <span class="blogsTitle">Tips You Can Follow When You Design Website</span>
-                        <p class="blog-description">
-                            Here are 27 tips to design a well-structured website that can boost traffic and engage users:
-                            </p>
-                            <div class="actions">
-                                <i class="fa-sharp fa-regular fa-pen-to-square"></i>
-                                <i class="fas fa-trash"></i>
-                            </div>
-                    </div>
+                    <div class="loader" id="loader">
+                        <div class="all">
+                      <div class="three-body">
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
+                        <div class="three-body__dot"></div>
+                        </div>
+                        <p>Loading Articles...</p>
+                      </div>
+                      </div>
                 </div>
                 <div class="modal-overlay">
                     <div class="modal-container">
                     <form action="#" id="form">
                         <h3>Add new article</h3>
                         <input type="text" name="" id="title" placeholder="Add blog title">
-                        <textarea name="" id="description" cols="30" rows="10" placeholder="Add blog description"></textarea>
+                        <textarea name="" id="description"  cols="30" rows="10" placeholder="Add blog description"></textarea>
                         <button type="button" class="btn-warning">
                             <i class="fa fa-upload"></i> &nbsp; upload image
                             <input id="image" type="file">
@@ -153,6 +115,24 @@
         </div>    
         </div>
     </div>
+    <div class="edit-overlay">
+        <div class="edit-container">
+            <form onsubmit="editBlog(event)" action="#" class="form">
+                <h3>Edit This article</h3>
+                <input type="text" class="title" >
+                <textarea class="description"  cols="30" rows="10" value="hey"></textarea>
+                <button type="button" class="btn-warning">
+                    <i class="fa fa-upload"></i> &nbsp; upload image
+                    <input class="image" type="file">
+                </button>
+                
+                <button type="submit" class="button-edit">
+                    <i class="fas fa-edit"></i> &nbsp; Update Article
+                </button>
+            </form>
+          <button class="close-edit"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
     <script src="./articles.js"></script>
 </body>
 </html>

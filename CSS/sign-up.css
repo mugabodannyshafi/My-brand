@@ -72,8 +72,8 @@ body{
   font-weight: 600;
 }
 .container .login-form{
-  height: 30rem;
-  width: 22rem;
+  height: 36rem;
+  width: 100%;
   background: #1f2a37;
   border-radius: 15px;
   padding: 3rem 14px 0px 14px;  
@@ -155,7 +155,9 @@ body{
   font-size: 15px;
   margin-top: 7px;
 }
-
+.container .check-list ul li .fa-xmark{
+  color: #f87171;
+}
 @media screen and (max-width: 500px) {
   .container{
     display: flex;
@@ -167,4 +169,22 @@ body{
   .container .check-list{
     margin-top: 1rem;
   }
+}
+.email-valid{
+  font-size: 12px;
+  margin-top: 3px;
+  color: #666c74;
+  display: block;
+}
+.password-valid{
+  font-size: 12px;
+  margin-top: 3px;
+  color: #666c74;
+  display: block;
+}
+.Cpassword-valid{
+  font-size: 12px;
+  margin-top: 3px;
+  color: #666c74;
+  display: block;
 }

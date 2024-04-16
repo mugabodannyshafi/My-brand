@@ -1,550 +1,640 @@
 :root {
-    --clr-primary-1: hsl(205, 86%, 17%);
-    --clr-primary-2: hsl(205, 77%, 27%);
-    --clr-primary-3: hsl(205, 72%, 37%);
-    --clr-primary-4: hsl(205, 63%, 48%);
-    --clr-primary-5: hsl(205, 78%, 60%);
-    --clr-primary-6: hsl(205, 89%, 70%);
-    --clr-primary-7: hsl(205, 90%, 76%);
-    --clr-primary-8: hsl(205, 86%, 81%);
-    --clr-primary-9: hsl(205, 90%, 88%);
-    --clr-primary-10: hsl(205, 100%, 96%);
-    --clr-grey-1: hsl(209, 61%, 16%);
-    --clr-grey-2: hsl(211, 39%, 23%);
-    --clr-grey-3: hsl(209, 34%, 30%);
-    --clr-grey-4: hsl(209, 28%, 39%);
-    --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-6: hsl(209, 23%, 60%);
-    --clr-grey-7: hsl(211, 27%, 70%);
-    --clr-grey-8: hsl(210, 31%, 80%);
-    --clr-grey-9: hsl(212, 33%, 89%);
-    --clr-grey-10: hsl(210, 36%, 96%);
-    --clr-white: #fff;
-    --clr-big-white: #ffffff;
-    --clr-red-dark: hsl(360, 67%, 44%);
-    --clr-red-light: hsl(360, 71%, 66%);
-    --clr-green-dark: hsl(125, 67%, 44%);
-    --clr-green-light: hsl(125, 71%, 66%);
-    --clr-black: #1b2127;
-    --clr-pink: #A140FD;
-    --clr-skyblue: #21A5EE;
-    --clr-background: #F4F7FC;
-    --clr-grey-white: #87888B;
-    --clr-dark-background: #303030;
-    --clr-hire: #3C3633;
-    --ff-primary: "Roboto", sans-serif;
-    --ff-secondary: "Open Sans", sans-serif;
-    --transition: all 0.3s linear;
-    --spacing: 0.1rem;
-    --radius: 0.25rem;
-    --light-shadow: 0 5px 15px rgba(140, 140, 140, 0.1);
-    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    --max-width: 1170px;
-    --fixed-width: 620px;
-  }
-  *{
-    margin: 0px;
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-big-white: #ffffff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #1b2127;
+  --clr-pink: #A140FD;
+  --clr-skyblue: #21A5EE;
+  --clr-background: #F4F7FC;
+  --clr-grey-white: #87888B;
+  --clr-dark-background: #303030;
+  --clr-hire: #3C3633;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(140, 140, 140, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  background: #221F3A;
+  background-size: cover;
+  height: 100vh;
+}
+.container{
+  display: flex;
+}
+.side-bar{
+  width: 25%;
+  height: 95vh;
+  background: #2E2B4A;
+  margin-top: 15px;
+  margin-left: 15px;
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.side-bar .text-logo{
+  text-transform: uppercase;
+  text-align: center;
+  top: 15px;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+.side-bar .text-logo span{
+  color: var(--clr-skyblue);
+}
+.side-bar .profile-picture img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 42%;
+}
+.side-bar .profile-picture .name{
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: var(--clr-white);
+}
+.side-bar .profile-picture .role{
+  text-align: center;
+  letter-spacing: 1px;
+  color: #9594a1;
+  font-weight: 100;
+  margin-top: 10px;
+}
+.side-bar .operations{
+  margin-left: 20%;
+  margin-top: 1.8rem;
+}
+.side-bar .operations .home{
+  display: flex;
+  width: 80%;
+  height: 30px;
+  padding: 5px 0px 0px 30px
+}
+.side-bar .operations #active {
+  background: #2a527e;
+  border-radius: 5px;
+  border-left: 3px solid var(--clr-skyblue);
+}
+.side-bar .operations #active a{
+  color: var(--clr-skyblue);
+}
+.side-bar .operations #active .img{
+  color: var(--clr-skyblue);
+}
+.side-bar .operations .home .img{
+  font-size: 19px;
+  color: #626071;
+}
+.side-bar .operations .home span a{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.side-bar .operations .articles{
+  display: flex;
+  margin-top: 29px;
+  cursor: pointer;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  padding: 5px 0px 0px 30px
+}
+.side-bar .operations .articles .img{
+  font-size: 19px;
+  color: #626071;
+}
+.side-bar .operations .articles span a{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.side-bar .operations .messages{
+  display: flex;
+  margin-top: 29px;
+  cursor: pointer;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  padding: 5px 0px 0px 30px
+}
+.side-bar .operations .messages .img{
+  font-size: 19px;
+  color: #626071;
+}
+.side-bar .operations .messages span a{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.side-bar .operations .setting{
+  display: flex;
+  margin-top: 29px;
+  cursor: pointer;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  padding: 5px 0px 0px 30px
+}
+.side-bar .operations .setting .img{
+  font-size: 19px;
+  color: #626071;
+}
+.side-bar .operations .setting span a{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.side-bar .operations .logout{
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  cursor: pointer;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  padding: 5px 0px 0px 30px
+}
+.side-bar .operations .logout img{
+  height: 23px;
+}
+.side-bar .operations .logout span a{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.hamburger{
+  visibility: hidden;
+}
+.close{
+  visibility: hidden;
+}
+.contents{
+  width: 72%;
+  margin-left: 20px;
+}
+.contents .search-profile{
+  width: 100%;
+  height: 8%;
+  margin-top: 15px;
+  position: relative;
+}
+.contents .search-profile input{
+  height: 38px;
+  width: 50%;
+  background: #1B192E;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  padding: 0px 50px 0px 15px;
+  color: #9594a1;
+  margin-top: 10px;
+  border-radius: 7px;
+  font-size: 16px;
+}
+.contents .search-profile input::placeholder{
+  font-size: 15px;
+}
+.contents .search-profile .profile{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  float: right;
+  margin-right: 13px;
+}
+.contents .search-profile .active-user{
+  position: absolute;
+  right: 4rem;
+  width: 21%;
+  top: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  height: 35px;
+  border-radius: 5px;
+  transition: .5s;
+  cursor: pointer;
+  padding: 10px;
+}
+.contents .search-profile .details{
+  position: absolute;
+  height: 100px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 21%;
+  background: #fff;
+  right: 4rem;
+  gap: 15px;
+  visibility: hidden;
+}
+.contents .search-profile .details .userLogout{
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30%;
+  width: 70%;
+}
+.contents .search-profile .details .userLogout:hover{
+  background: #c9c9d1;
+}
+.contents .search-profile .details .userLogout a{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contents .search-profile .details .userLogout img{
+  height: 23px;
+}
+.contents .search-profile .details .userLogout span{
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.contents .search-profile .details .userSetting{
+  cursor: pointer;
+  height: 30%;
+  width: 70%;
+  border-radius: 5px;
+}
+.contents .search-profile .details .userSetting:hover{
+  background: #c9c9d1;
+}
+.contents .search-profile .details .userSetting a{
+  text-decoration: none;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contents .search-profile .details .userSetting i{
+  font-size: 20px;
+  color: #9594a1;
+}
+.contents .search-profile .details .userSetting span {
+  padding: 5px 5px 5px 13px;
+  color: #9594a1;
+  font-size: 15px;
+  text-decoration: none;
+}
+.contents .search-profile .active-user:hover{
+  background: #2f2c43;
+}
+.contents .search-profile .active-user img{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+.contents .search-profile .active-user span{
+  color: #9594a1;
+}
+.contents .search-profile .search{
+  position: absolute;
+  left: 46%;
+  top: 30%;
+  height: 30px;
+  cursor: pointer;
+}
+.contents .user{
+  margin-top: 5%;
+}
+.contents .user .homepage-title{
+  color: var(--clr-white);
+  font-size: 1.3rem;
+}
+.contents .user .homepage-description{
+  margin-top: 5px;
+  font-size: 10px;
+  color: #9594a1;
+  letter-spacing: 1px;
+}
+.contents hr{
+  margin-top: 8px;
+  opacity: 0.1;
+}
+.contents .settings{
+  width: 100%;
+  margin-top: 20px;
+}
+.contents .settings .inbox{
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--clr-white);
+}
+form{
+  display: grid;
+  place-content: center;
+}
+form .inputs{
+  position: relative;
+  padding: 20px;
+  padding-left: 30px;
+  width: 100%;
+  height: auto;
+}
+form .inputs input[type=password]{
+  margin-top: 25px;
+}
+form .inputs input[type=submit]{
+margin-top: 25px;
+border: none;
+background: var(--clr-skyblue);
+color: var(--clr-white);
+cursor: pointer;
+font-size: 15px;
+}
+.form-group{
+  position: relative;
+}
+.form-group input{
+  padding-bottom: 5px;
+  font-size: 10px;
+  width: 300px;
+  border:none;
+  background: transparent;
+  color: #9594a1;
+  transition: 0.15s all ease;
+  outline: none;
+  height: 35px;
+  border: 1.5px solid #9594a1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+.form-group input:focus{
+  border: 1px solid var(--clr-skyblue);
+}
+.contents .settings form{
+  height: 350px;
+  width: 100%;
+  background: #26233e;
+  margin-top: 5px;
+  padding: 20px;
+}
+form .inputs input[type=email]{
+  margin-top: 25px;
+}
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label {
+  transform: translate(5px, -22px) scale(0.9);
+  font-size: 17px;
+  color: #000;
+}
+.form-group input:focus + #form-label,
+.form-group input:not(:placeholder-shown) + #form-label {
+  transform: translate(5px, -22px) scale(0.9);
+  font-size: 17px;
+  color: #000;
+}
+.form-group input:focus + #form-label1,
+.form-group input:not(:placeholder-shown) + #form-label1 {
+  transform: translate(5px, -22px) scale(0.9);
+  font-size: 17px;
+  color: #000;
+}
+.form-group .form-label{
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-size: 13px;
+  color: grey;
+  pointer-events: none;
+  transition: 0.15s all ease;
+}
+.form-group #form-label{
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  font-size: 13px;
+  color: grey;
+  pointer-events: none;
+  transition: 0.15s all ease;
+}
+.form-group #form-label1{
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  font-size: 13px;
+  color: grey;
+  pointer-events: none;
+  transition: 0.15s all ease;
+}
+.form-group input:focus + .form-label,
+.form-group input:not(:placeholder-shown) + .form-label {
+  top: 15px;
+  font-size: 13px;
+  color: grey;
+  left: 0;
+  background: #26233e;
+  padding: 0px 5px 0px;
+}
+.form-group input:focus + #form-label,
+.form-group input:not(:placeholder-shown) + #form-label {
+  top: 40px;
+  left: 0;
+  font-size: 13px;
+  color: grey;
+  background: #26233e;
+  padding: 0px 5px 0px;
+}
+.form-group input:focus + #form-label1,
+.form-group input:not(:placeholder-shown) + #form-label1 {
+  top: 40px;
+  left: 0;
+  font-size: 13px;
+  color: grey;
+  background: #26233e;
+  padding: 0px 5px 0px;
+}
+@media screen and (max-width: 900px) {
+  .side-bar{
+    width: 10%;
     padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-    scroll-behavior: smooth;
-  }
-  body{
-    background: #221F3A;
-    background-size: cover;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
     height: 100vh;
   }
-  .container{
-    display: flex;
-  }
-  .side-bar{
-    width: 25%;
-    height: 95vh;
-    background: #2E2B4A;
-    margin-top: 15px;
-    margin-left: 15px;
-    position: relative;
-    display: block;
-    padding-top: 20px;
-    padding-left: 10px;
-  }
   .side-bar .text-logo{
-    text-transform: uppercase;
-    text-align: center;
-    top: 15px;
-    color: var(--clr-white);
-    cursor: pointer;
-  }
-  .side-bar .text-logo span{
-    color: var(--clr-skyblue);
+    font-size: 10px;
   }
   .side-bar .profile-picture img{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-top: 15px;
-    margin-left: 42%;
+  height: 30px;
+  width: 30px;
+  margin-left: 20%;
   }
   .side-bar .profile-picture .name{
-    text-align: center;
-    font-size: 1.1rem;
-    margin-top: 10px;
-    color: var(--clr-white);
-  }
-  .side-bar .profile-picture .role{
-    text-align: center;
-    letter-spacing: 1px;
-    color: #9594a1;
-    font-weight: 100;
-    margin-top: 10px;
-  }
-  .side-bar .operations{
-    margin-left: 20%;
-    margin-top: 1.8rem;
-  }
-  .side-bar .operations .home{
-    display: flex;
-    width: 80%;
-    height: 30px;
-    padding: 5px 0px 0px 30px
-  }
-  .side-bar .operations #active {
-    background: #2a527e;
-    border-radius: 5px;
-    border-left: 3px solid var(--clr-skyblue);
-  }
-  .side-bar .operations #active a{
-    color: var(--clr-skyblue);
-  }
-  .side-bar .operations #active .img{
-    color: var(--clr-skyblue);
-  }
-  .side-bar .operations .home .img{
-    font-size: 19px;
-    color: #626071;
-  }
-  .side-bar .operations .home span a{
-    padding: 5px 5px 5px 13px;
-    color: #9594a1;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  .side-bar .operations .articles{
-    display: flex;
-    margin-top: 29px;
-    cursor: pointer;
-    width: 80%;
-    height: 30px;
-    display: flex;
-    padding: 5px 0px 0px 30px
-  }
-  .side-bar .operations .articles .img{
-    font-size: 19px;
-    color: #626071;
-  }
-  .side-bar .operations .articles span a{
-    padding: 5px 5px 5px 13px;
-    color: #9594a1;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  .side-bar .operations .messages{
-    display: flex;
-    margin-top: 29px;
-    cursor: pointer;
-    width: 80%;
-    height: 30px;
-    display: flex;
-    padding: 5px 0px 0px 30px
-  }
-  .side-bar .operations .messages .img{
-    font-size: 19px;
-    color: #626071;
-  }
-  .side-bar .operations .messages span a{
-    padding: 5px 5px 5px 13px;
-    color: #9594a1;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  .side-bar .operations .setting{
-    display: flex;
-    margin-top: 29px;
-    cursor: pointer;
-    width: 80%;
-    height: 30px;
-    display: flex;
-    padding: 5px 0px 0px 30px
-  }
-  .side-bar .operations .setting .img{
-    font-size: 19px;
-    color: #626071;
-  }
-  .side-bar .operations .setting span a{
-    padding: 5px 5px 5px 13px;
-    color: #9594a1;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  .side-bar .operations .logout{
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    cursor: pointer;
-    width: 80%;
-    height: 30px;
-    display: flex;
-    padding: 5px 0px 0px 30px
-  }
-  .side-bar .operations .logout img{
-    height: 23px;
-  }
-  .side-bar .operations .logout span a{
-    padding: 5px 5px 5px 13px;
-    color: #9594a1;
-    font-size: 15px;
-    text-decoration: none;
-  }
-  .hamburger{
     visibility: hidden;
   }
-  .close{
+  .side-bar .profile-picture .role{
+    visibility: hidden;
+  }
+  .side-bar .operations .home span{
+    visibility: hidden;
+  }
+  .side-bar .operations .articles span{
+    visibility: hidden;
+  }
+  .side-bar .operations .messages span{
+    visibility: hidden;
+  }
+  .side-bar .operations .setting span{
+    visibility: hidden;
+  }
+  .side-bar .operations .logout span{
     visibility: hidden;
   }
   .contents{
-    width: 72%;
+    width: 85%;
     margin-left: 20px;
   }
-  .contents .search-profile{
-    width: 100%;
-    height: 8%;
-    margin-top: 15px;
-    position: relative;
-  }
   .contents .search-profile input{
-    height: 38px;
-    width: 50%;
-    background: #1B192E;
-    border: none;
-    outline: none;
-    color: whitesmoke;
-    padding: 0px 50px 0px 15px;
-    color: #9594a1;
-    margin-top: 10px;
-    border-radius: 7px;
-    font-size: 16px;
+    width: 70%;
+    font-size: 20px;
+    height: 45px;
   }
   .contents .search-profile input::placeholder{
-    font-size: 15px;
-  }
-  .contents .search-profile .profile{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    float: right;
-    margin-right: 13px;
+    font-size: 20px;
   }
   .contents .search-profile .search{
-    position: absolute;
-    left: 46%;
-    top: 30%;
-    height: 30px;
-    cursor: pointer;
-  }
-  .contents .user{
-    margin-top: 5%;
+    left: 63%;
+    top: 20%;
+    height: 35px;
   }
   .contents .user .homepage-title{
-    color: var(--clr-white);
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
   .contents .user .homepage-description{
-    margin-top: 5px;
-    font-size: 10px;
-    color: #9594a1;
-    letter-spacing: 1px;
+    margin-top: 20px;
+    font-size: 20px;
   }
   .contents hr{
-    margin-top: 8px;
-    opacity: 0.1;
-  }
-  .contents .settings{
-    width: 100%;
-    margin-top: 20px;
-  }
-  .contents .settings .inbox{
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--clr-white);
-  }
-  form{
-    display: grid;
-    place-content: center;
-  }
-  form .inputs{
-    position: relative;
-    padding: 20px;
-    padding-left: 30px;
-    width: 100%;
-    height: auto;
-}
-form .inputs input[type=password]{
     margin-top: 25px;
+  }
 }
-form .inputs input[type=submit]{
-  margin-top: 25px;
-  border: none;
-  background: var(--clr-skyblue);
-  color: var(--clr-white);
-  cursor: pointer;
-  font-size: 15px;
-}
-.form-group{
+@media screen and (max-width: 600px){
+  .container{
+    display: block;
+  }
+  .side-bar{
+    position: absolute;
+    width: 100%;
+    height: 96vh;
     position: relative;
+    padding-left: 10px;
+    visibility: hidden;
+    z-index: 1;
   }
-  .form-group input{
-    padding-bottom: 5px;
-    font-size: 10px;
-    width: 300px;
-    border:none;
-    background: transparent;
-    color: #9594a1;
-    transition: 0.15s all ease;
-    outline: none;
-    height: 35px;
-    border: 1.5px solid #9594a1;
+  .active-side{
+    visibility: visible;
+  }
+  .active-side .profile-picture .name{
+    visibility: visible;
+  }
+  .active-side .profile-picture .role{
+    visibility: visible;
+  }
+  .active-side .operations .home span{
+    visibility: visible;
+  }
+  .active-side .operations .articles span{
+    visibility: visible;
+  }
+  .active-side .operations .messages span{
+    visibility: visible;
+  }
+  .active-side .operations .setting span{
+    visibility: visible;
+  }
+  .active-side .operations .logout span{
+    visibility: visible;
+  }
+  .side-bar .profile-picture img{
+    visibility: hidden;
+  }
+  .hamburger{
+    visibility: visible;
+    font-size: 1.7rem;
+    color: var(--clr-white);
+    position: absolute;
+    top: 0;
     padding: 10px;
-    font-size: 16px;
-    border-radius: 3px;
+    z-index: 2;
   }
-  .form-group input:focus{
-    border: 1px solid var(--clr-skyblue);
+  .close{
+    font-size: 1.7rem;
+    color: tomato;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    z-index: 2;
+  }
+  .contents{
+    position: absolute;
+    padding-left: 2rem;
+    margin-top: 30px;
+    margin-left: 0px;
+    padding-bottom: 20px;
+    top: 0;
+  }
+  .contents .search-profile img{
+  margin-top: 10px;
+  }
+  .contents .search-profile input::placeholder{
+    font-size: 12px;
+  }
+  .contents .search-profile .search{
+    top: 10%;
+    left: 60%;
   }
   .contents .settings form{
-    height: 350px;
-    width: 100%;
-    background: #26233e;
-    margin-top: 5px;
-    padding: 20px;
+    background: none;
   }
-  form .inputs input[type=email]{
-    margin-top: 25px;
 }
-  .form-group input:focus + .form-label,
-  .form-group input:not(:placeholder-shown) + .form-label {
-    transform: translate(5px, -22px) scale(0.9);
-    font-size: 17px;
-    color: #000;
-  }
-  .form-group input:focus + #form-label,
-  .form-group input:not(:placeholder-shown) + #form-label {
-    transform: translate(5px, -22px) scale(0.9);
-    font-size: 17px;
-    color: #000;
-  }
-  .form-group input:focus + #form-label1,
-  .form-group input:not(:placeholder-shown) + #form-label1 {
-    transform: translate(5px, -22px) scale(0.9);
-    font-size: 17px;
-    color: #000;
-  }
-  .form-group .form-label{
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    font-size: 13px;
-    color: grey;
-    pointer-events: none;
-    transition: 0.15s all ease;
-  }
-  .form-group #form-label{
-    position: absolute;
-    top: 35px;
-    left: 10px;
-    font-size: 13px;
-    color: grey;
-    pointer-events: none;
-    transition: 0.15s all ease;
-  }
-  .form-group #form-label1{
-    position: absolute;
-    top: 35px;
-    left: 10px;
-    font-size: 13px;
-    color: grey;
-    pointer-events: none;
-    transition: 0.15s all ease;
-  }
-  .form-group input:focus + .form-label,
-  .form-group input:not(:placeholder-shown) + .form-label {
-    top: 15px;
-    font-size: 13px;
-    color: grey;
-    left: 0;
-    background: #26233e;
-    padding: 0px 5px 0px;
-  }
-  .form-group input:focus + #form-label,
-  .form-group input:not(:placeholder-shown) + #form-label {
-    top: 40px;
-    left: 0;
-    font-size: 13px;
-    color: grey;
-    background: #26233e;
-    padding: 0px 5px 0px;
-  }
-  .form-group input:focus + #form-label1,
-  .form-group input:not(:placeholder-shown) + #form-label1 {
-    top: 40px;
-    left: 0;
-    font-size: 13px;
-    color: grey;
-    background: #26233e;
-    padding: 0px 5px 0px;
-  }
-  @media screen and (max-width: 900px) {
-    .side-bar{
-      width: 10%;
-      padding: 0px;
-      margin-left: 0px;
-      padding-top: 0px;
-      padding-left: 0px;
-      margin-top: 0px;
-      height: 100vh;
-    }
-    .side-bar .text-logo{
-      font-size: 10px;
-    }
-    .side-bar .profile-picture img{
-    height: 30px;
-    width: 30px;
-    margin-left: 20%;
-    }
-    .side-bar .profile-picture .name{
-      visibility: hidden;
-    }
-    .side-bar .profile-picture .role{
-      visibility: hidden;
-    }
-    .side-bar .operations .home span{
-      visibility: hidden;
-    }
-    .side-bar .operations .articles span{
-      visibility: hidden;
-    }
-    .side-bar .operations .messages span{
-      visibility: hidden;
-    }
-    .side-bar .operations .setting span{
-      visibility: hidden;
-    }
-    .side-bar .operations .logout span{
-      visibility: hidden;
-    }
-    .contents{
-      width: 85%;
-      margin-left: 20px;
-    }
-    .contents .search-profile input{
-      width: 70%;
-      font-size: 20px;
-      height: 45px;
-    }
-    .contents .search-profile input::placeholder{
-      font-size: 20px;
-    }
-    .contents .search-profile .search{
-      left: 63%;
-      top: 20%;
-      height: 35px;
-    }
-    .contents .user .homepage-title{
-      font-size: 2rem;
-    }
-    .contents .user .homepage-description{
-      margin-top: 20px;
-      font-size: 20px;
-    }
-    .contents hr{
-      margin-top: 25px;
-    }
-  }
-  @media screen and (max-width: 600px){
-    .container{
-      display: block;
-    }
-    .side-bar{
-      position: absolute;
-      width: 100%;
-      height: 96vh;
-      position: relative;
-      padding-left: 10px;
-      visibility: hidden;
-      z-index: 1;
-    }
-    .active-side{
-      visibility: visible;
-    }
-    .active-side .profile-picture .name{
-      visibility: visible;
-    }
-    .active-side .profile-picture .role{
-      visibility: visible;
-    }
-    .active-side .operations .home span{
-      visibility: visible;
-    }
-    .active-side .operations .articles span{
-      visibility: visible;
-    }
-    .active-side .operations .messages span{
-      visibility: visible;
-    }
-    .active-side .operations .setting span{
-      visibility: visible;
-    }
-    .active-side .operations .logout span{
-      visibility: visible;
-    }
-    .side-bar .profile-picture img{
-      visibility: hidden;
-    }
-    .hamburger{
-      visibility: visible;
-      font-size: 1.7rem;
-      color: var(--clr-white);
-      position: absolute;
-      top: 0;
-      padding: 10px;
-      z-index: 2;
-    }
-    .close{
-      font-size: 1.7rem;
-      color: tomato;
-      position: absolute;
-      top: 0;
-      padding: 10px;
-      z-index: 2;
-    }
-    .contents{
-      position: absolute;
-      padding-left: 2rem;
-      margin-top: 30px;
-      margin-left: 0px;
-      padding-bottom: 20px;
-      top: 0;
-    }
-    .contents .search-profile img{
-    margin-top: 10px;
-    }
-    .contents .search-profile input::placeholder{
-      font-size: 12px;
-    }
-    .contents .search-profile .search{
-      top: 10%;
-      left: 60%;
-    }
-    .contents .settings form{
-      background: none;
-    }
-  }

@@ -1,40 +1,56 @@
-   
-    document.addEventListener('DOMContentLoaded', () =>{
-
-
-            const email = 'mugabodannyshafi@gmail.com'
-            const adminPassword = 'dANNY1234@'
-            const users = {
-                username: email,
-                password: adminPassword
-            }
-            
-            const myUsers = JSON.parse(localStorage.getItem('users')) || []
-            myUsers.push(users)
-            localStorage.setItem('users', JSON.stringify(myUsers))
-
+async function adminLogin(event) {
+  event.preventDefault()
  const username = document.getElementById('user')
  const userPassword = document.getElementById('pass')
- let modelContainer = document.getElementById('model-container')
-let close = document.getElementById('close')
-const link = document.getElementById('admin-link')
-  button.addEventListener('click', () =>{
-    if(username.value.trim() !== users.username && userPassword.value.trim() !== users.password)
+ const modelContainer = document.getElementById('model-container')
+ const close = document.getElementById('close')
+
+const userData = {
+  emailAddress: username.value,
+  pwd: userPassword.value
+}
+if(username.value.trim() !== '' && userPassword.value.trim() !== "") {
+  await fetch("http://localhost:7000/login", {
+  headers: {
+    "Content-Type": "application/json"
+  },
+  method: "POST",
+  body: JSON.stringify(userData)
+})
+.then((response) => {
+  if(!response.ok) 
   {
-    modelContainer.style.display = 'block';
-    close.addEventListener('click', function()
-    {
-        modelContainer.style.display = 'none'
-    })
+    console.log('-------------->error')
   }
- else{
-    window.location.href = './Admin/admin-index.html'
+  return response.json()
+}).then((data) => {
+  console.log(data.accessToken)
+  console.log(data.result.username)
+  const myToken = data.accessToken
+  const userName = data.result.username
+  localStorage.setItem('name', JSON.stringify(userName))
+  localStorage.setItem('jwt', JSON.stringify(myToken))
+  if(data) {
+    console.log('logged in')
+     window.location = "./loading/logging-loader.html"
+}
+else{
+  modelContainer.style.display = 'block';
+   close.addEventListener('click', function()
+   {
+       modelContainer.style.display = 'none'
+   })
+}
+}).catch((error) => {
+  console.log(error)
+})
+}
+else {
+  modelContainer.style.display = 'block';
+     close.addEventListener('click', function()
+     {
+         modelContainer.style.display = 'none'
+     })
+}
+
  }
-})
-window.addEventListener('click', function(x){
-  if(x.target === modelContainer)
-  {
-   modelContainer.style.display = 'none'
-  }
-})
-})
