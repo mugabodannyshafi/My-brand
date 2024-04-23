@@ -499,6 +499,9 @@ body{
   font-size: 13px;
 }
 @media screen and (max-width: 900px) {
+  .active-user{
+    visibility: hidden;
+  }
   .side-bar{
     width: 10%;
     padding: 0px;
@@ -615,6 +618,49 @@ body{
 
 }
 @media screen and (max-width: 600px){
+  .contents .message1{
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+  .contents #mucyo{
+    position: absolute;
+    top: 5px;
+    color: var(--clr-white);
+    font-size: 8px;
+    opacity: 0.9;
+  }
+  .contents #message1{
+    position: absolute;
+    top:  28px;
+    font-size: 5px;
+    color: #9594a1;
+    letter-spacing: 1px;
+  }
+  .contents .message2{
+    margin-top: 12px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+  .contents #gloire{
+    position: absolute;
+    top: 5px;
+    color: var(--clr-white);
+    font-size: 8px;
+    opacity: 0.9;
+  }
+  .contents #message2{
+    position: absolute;
+    top:  28px;
+    font-size: 5px;
+    color: #9594a1;
+    letter-spacing: 1px;
+  }
+  
   .container{
     display: block;
   }

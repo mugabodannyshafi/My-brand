@@ -38,7 +38,7 @@ async function adminRegister(event) {
                 emailAddress: user.value,
                 pwd: pass.value,
                 }
-                await fetch("http://localhost:7000/register", {
+                await fetch("https://my-brand-backend-3-o1dg.onrender.com/register", {
                     headers:{
                         "Content-Type": "application/json"
                     },

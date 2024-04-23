@@ -361,13 +361,14 @@ body{
 .contents .settings{
   width: 100%;
   margin-top: 20px;
+  height: 70%;
 }
 .contents .settings .inbox{
   text-align: center;
   font-size: 1.5rem;
   color: var(--clr-white);
 }
-form{
+form{ 
   display: grid;
   place-content: center;
 }
@@ -411,7 +412,7 @@ font-size: 15px;
   border: 1px solid var(--clr-skyblue);
 }
 .contents .settings form{
-  height: 350px;
+  height: 100%;
   width: 100%;
   background: #26233e;
   margin-top: 5px;
@@ -560,6 +561,9 @@ form .inputs input[type=email]{
   }
 }
 @media screen and (max-width: 600px){
+  .active-user{
+    visibility: hidden;
+  }
   .container{
     display: block;
   }
@@ -636,5 +640,73 @@ form .inputs input[type=email]{
   }
   .contents .settings form{
     background: none;
+  }
+  .contents .user .homepage-title{
+    color: var(--clr-white);
+    font-size: 1rem;
+  }
+  .contents .user .homepage-description{
+    margin-top: 5px;
+    font-size: 8px;
+  }
+  .contents hr{
+    margin-top: 8px;
+    opacity: 0.1;
+  }
+  .contents .settings{
+    width: 100%;
+    margin-top: 20px;
+    height: 70%;
+  }
+  .contents .settings .inbox{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--clr-white);
+  }
+}
+#model{
+  background: #f4f7fc;
+  position: absolute;
+  bottom: 2%;
+  left: 17%;
+  transform: translate(-50%,-50%);
+  height: 45px;
+  width: 30%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation-name: animateModel;
+  animation-duration: .5s;
+  border-radius: 5px;
+  color: #737477;
+}
+#close{
+  color: #737477;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 23px;
+  transition: .2s;
+}
+#close:hover{
+  transform: scale(1.2);
+}
+#model-container{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+@keyframes animateModel {
+  from{
+  left: -300px;
+  opacity: 0;
+  }
+  to{
+      left: 17%;
+      opacity: 1;
   }
 }

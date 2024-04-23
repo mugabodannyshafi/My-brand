@@ -84,7 +84,7 @@
                 <div class="inbox">
                     Change your personal information
                 </div>
-                <form action="">
+                <form action="" onsubmit="changePassword(event)">
                     <div class="inputs">
                         <div class="form-group">
                             <input id="user" type="text" placeholder="">
@@ -103,6 +103,12 @@
                           </div>
                         </div>
                 </form>
+            </div>
+        </div>
+        <div id="model-container">
+            <div id="model">
+                <p class="response"></p>
+                <!-- <div id="close">&times</div> -->
             </div>
         </div>
     </div>
