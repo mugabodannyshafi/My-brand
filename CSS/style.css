@@ -210,9 +210,9 @@ hr{
     background: #00294a;
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 70px;
     display: none;
-    font-size: 4rem;
+    font-size: 2rem;
     padding-left: 20px;
     animation-name: animate-nav;
   }
@@ -231,11 +231,11 @@ hr{
     border: none;
     color: var(--clr-white);
     padding-top: 10px;
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
   .menu button{
     position: absolute;
-    top: 32rem;
+    top: 22rem;
     left: 0;
     width: 100%;
     display: none;
@@ -602,7 +602,7 @@ text-align: center;
 margin-top: 10px;
 color: var(--clr-white);
 }
-.blogs .blog-cards p{
+.blogs .blog-cards .blog-description{
 font-size: 15px;
 color: var(--clr-grey-white);
 margin-top: 15px;

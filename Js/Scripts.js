@@ -112,16 +112,15 @@ fetch('http://localhost:7000/blogs')
   {
     
         const div = document.createElement('div')
-        
         div.innerHTML = `<div class="blog-cards">
         <div class="img-hover">
             <i class="fa-solid fa-heart"></i>&nbsp; <span id="numLikes"></span>
         </div>
         <img class="modal-image" src="${data.blogs[counter].image}" alt="">
         <span class="blogsTitle">${data.blogs[counter].title}</span>
-        <p class="blog-description">
+        <div class="blog-description">
         ${data.blogs[counter].body}
-        </p>`
+        </div>`
             blogs.appendChild(div)
     }
   }
@@ -144,11 +143,9 @@ for(let i = 0; i < cardBtn.length; i++)
           const cardTitle =blogsTitle.cloneNode(true) 
           modalContent.append(cardTitle)
           const blogsId = document.createElement('span')
-          blogsId.classList.add('blogsId')
-          modalContent.append(blogsId)
-          blogsId.innerHTML = `This card's id: ${data.blogs[i]._id}`
+          
           const blogsDescription = cardBtn[i].querySelector('.blog-description')
-          const cardDescription =blogsDescription.cloneNode(true) 
+          const cardDescription =blogsDescription.cloneNode(true)
           modalContent.append(cardDescription)
           
           const line = document.createElement('div')

@@ -713,6 +713,7 @@ body{
   color: var(--clr-white);
   outline: none;
   padding: 10px;
+  z-index: 11;
 }
 .modal-container form input::placeholder{
   color: #b5b5b8;
@@ -720,17 +721,22 @@ body{
 .modal-container form input:focus{
   border: 1px solid var(--clr-skyblue);
 }
-.modal-container form textarea{
+#description {
+  position: relative;
   resize: none;
   margin-top: 20px;
-  height: 50px;
+  height: 100px;
+  outline: none;
   border: 1px solid #515566;
   border-radius: 5px;
   color: var(--clr-white);
-  outline: none;
   padding: 10px;
   background: #2f3342;
+  box-shadow: 0 0 0 1px #515566;
 }
+
+
+
 .modal-container form textarea::placeholder{
   color: #b5b5b8;
 }
