@@ -27,23 +27,27 @@ user.innerHTML = `Hey, ${localUser} Welcome to the admin panel!`
 const activeUser = document.querySelector('.active-user')
 const spanName = document.querySelector('.span-name')
 
-
+const up = document.querySelector('.fa-chevron-up')
+const down = document.querySelector('.fa-chevron-down')
 const details = document.querySelector('.details');
 
 activeUser.addEventListener('mouseover', () => {
     details.style.visibility = 'visible';
+    up.style.visibility = 'visible'
+    down.style.visibility = 'hidden'
 });
 
 details.addEventListener('mouseover', () => {
     details.style.visibility = 'visible';
+    up.style.visibility = 'visible'
+    down.style.visibility = 'hidden'
 });
 
 details.addEventListener('mouseout', () => {
     details.style.visibility = 'hidden';
+    up.style.visibility = 'hidden'
+    down.style.visibility = 'visible'
 });
-
-
-
 spanName.innerHTML = `${localUser}`
 async function handleAdmin() {
  await fetch('http://localhost:7000/login',{

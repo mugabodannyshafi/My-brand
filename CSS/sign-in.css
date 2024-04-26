@@ -47,93 +47,137 @@
 }
 body{
   height: 100vh;
-  background: #384250;
+  width: 100%;
+  background: #161c24;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .logo{
-  position: absolute;
-  left: 0;
-  top: 10px;
-  text-transform: uppercase;
+.logo{
   padding: 10px;
-  font-weight: 600;
-}
-.container .logo a{
-  text-decoration: none;
+  left: 0;
+  position: absolute;
+  margin-top: 7px;
+  font-size: 15px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
   color: var(--clr-white);
+  cursor: pointer;
 }
-.container .logo span{
+.logo a{
+  color: #fff;
+  text-decoration: none;
+}
+.logo span{
   color: var(--clr-skyblue);
   font-weight: 600;
 }
-.container .login-form{
-  height: 28rem;
-  width: 22rem;
-  background: #1f2a37;
+form{
+  height: 32rem;
+  width: 32rem;
+  resize: none;
+  background: rgb(37, 48, 61);
   border-radius: 15px;
+  border: 0.5px solid #2f3e4f;
   padding: 5rem 14px 0px 14px;
-
+  position: relative;
 }
-.container .login-form .login-title{
- color: var(--clr-white);
- font-size: 22px;
- text-align: center;
-}
-.container .login-form p{
-  color: #6c7279;
-  font-size: 13px;
-  margin-top: 12px;
+.container form .login-title{
+  color: var(--clr-white);
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+ }
+ .container form p{
+  color: #8a96a3;
+  font-size: 15px;
+  margin-top: 15px;
   text-align: center;
 }
-.container .login-form .inputs .form-inputs{
+.container form .inputs{
+  position: relative;
+}
+.container form .inputs .form-inputs{
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  position: relative;
 }
-.container .login-form .inputs .form-inputs label{
+.container form .inputs .labelEmail{
+  position: absolute;
+  left: 12%;
+  color: #c3c5c9;
+  font-size: 11px;
+  top: 2.9rem;
+  z-index: 1;
+  padding: 0px 6px 0px;
+  background: rgb(37, 48, 61);
+}
+.container form .inputs .labelPassword{
+  position: absolute;
+  left: 12%;
+  top: 6.8rem;
+  z-index: 1;
+  padding: 0px 6px 0px;
+  background: rgb(37, 48, 61);
   color: #c3c5c9;
   font-size: 11px;
 }
-.container .login-form .inputs .form-inputs input{
-  margin-top: 3px;
-  height: 38px;
+.container form .inputs .form-inputs input{
+  margin-top: 20px;
+  height: 40px;
+  width: 80%;
   padding: 10px;
   outline: none;
-  background: #0c111d;
-  border: 1.5px solid #29303c;
-  border-radius: 5px;
+  background: transparent;
+  border: 1.5px solid #3c4752;
+  border-radius: 10px;
   color: var(--clr-white);
 }
-.container .login-form .inputs .form-inputs input::placeholder{
-  color: #595c64;
+.container form .inputs .form-inputs input:hover{
+  border: 2px solid #fff;
 }
-.container .login-form .inputs .forgot{
-  margin-top: 1rem;
-  color: #c3c5c9;
-  font-size: 11px;
+.container form .inputs .form-inputs input:focus{
+  border: 2px solid #385bf5;
 }
-.container .login-form .inputs .button{
-  margin-top: 1rem;
+.container form .inputs .form-inputs input::placeholder{
+  color: #fff;
 }
-.container .login-form .inputs .button button{
-  height: 30px;
+
+.container form .inputs .form-inputs input[type="submit"]{
   width: 100%;
+  height: 42px;
+  width: 80%;
+  outline: none;
   border: none;
-  border-radius: 5px;
-  color: var(--clr-white);
-  background: var(--clr-skyblue);
-  cursor: pointer;
+  background: #5a78ff;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer; 
 }
-.container .login-form .inputs .dont-have{
+.container form .inputs button:hover{
+  background: rgb(60, 60, 234);
+}
+.signIn{
+  position: absolute;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #fff;
+  top: 50%;
+  pointer-events: none;
+}
+.container form .inputs .dont-have{
   text-align: center;
-  margin-top: 35px;
+  margin-top: 5rem;
   font-size: 13px;
-  color: #666c74;
 }
-.container .login-form .inputs .dont-have a{
-  color: #999ca3;
+.container form .inputs .dont-have a{
+  color: #385bf5;
+  font-size: 13px;
   text-decoration: none;
 }
 #model{
@@ -180,5 +224,37 @@ body{
   to{
       left: 17%;
       opacity: 1;
+  }
+}
+.loader {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.5rem;
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  border-right-color: transparent;
+  animation: spin 1.5s linear infinite;
+  vertical-align: middle;
+}
+.buttonLoading{
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+}
+.buttonLoading span{
+ color: #fff;
+ pointer-events: none;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 600px) {
+  form{
+      width: 90vw;
   }
 }

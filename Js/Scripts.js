@@ -356,6 +356,8 @@ const contactMessage = document.getElementById('contactMessage')
 const contactBtn = document.getElementById('contactBtn')
 let modelContainer = document.getElementById('model-container')
 let closeBtn = document.getElementById('close')
+const buttonLoading = document.querySelector('.buttonLoading')
+const signIn = document.querySelector('.signIn')
 contactBtn.addEventListener('click', () => {
     const contacts = {
         fromEmail: contactEmail.value,
@@ -366,6 +368,8 @@ contactBtn.addEventListener('click', () => {
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail.value)
   if(emailValid && contactNames.value.trim() !== '' && contactPhone.value.trim() !== '' && contactMessage.value.trim() !== '')
   {
+    buttonLoading.style.visibility = 'visible'
+    signIn.style.visibility = 'hidden'
     fetch('http://localhost:7000/sendEmail', {
         headers: {
             "Content-Type": "application/json"
@@ -379,7 +383,8 @@ contactBtn.addEventListener('click', () => {
   return response.json();
 })
 .then(data => {
-console.log(data)
+  buttonLoading.style.visibility = 'hidden'
+  signIn.style.visibility = 'visible'
 contactEmail.value = ''
         contactNames.value = ''
         contactPhone.value = ''

@@ -4,35 +4,57 @@ async function adminRegister(event) {
     const pass = document.getElementById('pass');
     const pass1 = document.getElementById('pass1');
     const name = document.getElementById('name');
-    const link = document.getElementById('sign-in');
     const button = document.getElementById('button');
     const email = document.querySelector('.email-valid')
     const password = document.querySelector('.password-valid')
     const confirmPassword = document.querySelector('.Cpassword-valid')
-
+    const buttonLoading = document.querySelector('.buttonLoading')
+    const signIn = document.querySelector('.signIn')
     button.addEventListener('click', async () => {
         const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.value)
         if (!emailValid) {
-            user.style.border = '1px solid #f87171';
-            email.style.color = '#f87171';
+            user.classList.add('red')
+            user.style.border = '1px solid #cb2f32';
+            email.style.color = '#cb2f32';
             email.style.display = 'block'
+
+            user.onclick = () => {
+                user.classList.remove('red')
+                user.style.border = '';
+                email.style.display = 'none'
+            }
         }
         const passwordValid = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pass.value) && pass.value.length >= 8;
         if (!passwordValid) {
-            pass.style.border = '1px solid #f87171';
-            password.style.color = '#f87171';
+            pass.classList.add('red')
+            pass.style.border = '1px solid #cb2f32';
+            password.style.color = '#cb2f32';
             password.style.display = 'block'
+
+            pass.onclick = () => {
+                pass.classList.remove('red')
+                pass.style.border = '';
+                password.style.display = 'none'
+            }
         }
 
         const confirmPasswordValid = pass.value.trim() === pass1.value.trim() && pass1.value.length >=8;
         if (!confirmPasswordValid) {
-            pass1.style.border = '1px solid #f87171';
-            confirmPassword.style.color = '#f87171';
+            pass1.classList.add('red')
+            pass1.style.border = '1px solid #cb2f32';
+            confirmPassword.style.color = '#cb2f32';
             confirmPassword.style.display = 'block'
-        }
 
+            pass1.onclick = () => {
+                pass1.classList.remove('red')
+                pass1.style.border = '';
+                confirmPassword.style.display = 'none'
+            }
+        }
         if(emailValid && passwordValid && confirmPasswordValid && name.value.trim !== '')
         {
+            signIn.style.visibility = 'hidden'
+            buttonLoading.style.visibility = 'visible'
             const userData = {
                 userName: name.value,
                 emailAddress: user.value,
@@ -46,12 +68,14 @@ async function adminRegister(event) {
                     body: JSON.stringify(userData)
                 }).then((response) => {
                     if(!response.ok) {
-                        console.log('------->error')
+                        signIn.style.visibility = 'visible';
+                        buttonLoading.style.visibility = 'hidden'
                     }
                     return response.json()
                 }).then((data) => {
-                    console.log(data)
-                    window.location = "./loading/accountLoader.html"
+                    signIn.style.visibility = 'visible'
+                    buttonLoading.style.visibility = 'hidden'
+                    window.location = "./sign-in.html"
                 }).catch((error) => {
                     console.log(error)
                 })

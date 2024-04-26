@@ -247,18 +247,28 @@ body{
 .contents .search-profile .active-user{
   position: absolute;
   right: 4rem;
-  width: 21%;
+  width: 22%;
   top: 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   text-align: end;
   height: 35px;
   border-radius: 5px;
   transition: .5s;
   cursor: pointer;
-  padding: 10px;
+  gap: 20px;
+  padding: 10px; 
 }
+.contents .search-profile .active-user i{
+  color: gray;
+  position: absolute;
+  right: 0;
+}
+.contents .search-profile .active-user .fa-chevron-up{
+  visibility: hidden;
+}
+
 .contents .search-profile .details{
   position: absolute;
   height: 100px;
@@ -419,6 +429,9 @@ body{
   }
 }
 @media screen and (max-width: 900px) {
+  .active-user{
+    visibility: hidden;
+  }
   .side-bar{
     width: 10%;
     padding: 0px;
@@ -475,11 +488,11 @@ body{
     height: 35px;
   }
   .contents .user .homepage-title{
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .contents .user .homepage-description{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 10px;
   }
   .contents hr{
     margin-top: 25px;

@@ -247,18 +247,28 @@ body{
 .contents .search-profile .active-user{
   position: absolute;
   right: 4rem;
-  width: 21%;
+  width: 22%;
   top: 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   text-align: end;
   height: 35px;
   border-radius: 5px;
   transition: .5s;
   cursor: pointer;
-  padding: 10px;
+  gap: 20px;
+  padding: 10px; 
 }
+.contents .search-profile .active-user i{
+  color: gray;
+  position: absolute;
+  right: 0;
+}
+.contents .search-profile .active-user .fa-chevron-up{
+  visibility: hidden;
+}
+
 .contents .search-profile .details{
   position: absolute;
   height: 100px;

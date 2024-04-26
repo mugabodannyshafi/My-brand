@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login to your account</title>
+    <link rel="stylesheet" href="./CSS/sign-in.css">
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <link rel="shortcut icon" type="x-icon" href="./image/profile-3.jpeg">
-        <link rel="stylesheet" href="./CSS/sign-in.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"> my <span>brand</span></a>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"> my <span>brand</span></a>
+         </div>
+        <form onsubmit="adminLogin(event)" action="">
+            <div class="login-title">
+                Welcome back!
              </div>
-             <form onsubmit="adminLogin(event)">
-            <div class="login-form">
-                 <div class="login-title">
-                    Welcome back!
-                 </div>
-                 <p>please enter your account details.</p>
-                 <div class="inputs">
-                    <div class="form-inputs">
-                        <label for="Email">Email</label>
-                    <input type="email" id="user" placeholder="Enter your email">
-                    </div>
-                    <div class="form-inputs">
-                        <label for="password">Password</label>
-                        <input type="password" id="pass" placeholder="Enter your password">
-                    </div>
-                    <div class="forgot">
-                        forgot password
-                    </div>
-                    <div class="button">
-                        <a id="admin-link" href=""><button type="submit" id="button">Sign in</button></a>
-                    </div>
-                    <div class="dont-have">
-                        Don't have an account? <a href="./sign-up.html">Sign up</a>
-                    </div>
-                 </div>
-            </div>
+             <p>please enter your account details.</p>
+             <div class="inputs">
+                <label class="labelEmail" for="Email">Email</label>
+                <div class="form-inputs">
+                    
+                <input type="email" id="user" value="example@gmail.com ">
+                </div>
+                <label class="labelPassword" for="password">Password</label>
+                <div class="form-inputs">
+                    
+                    <input type="password" id="pass" value="........">
+                </div>
+                 <!-- <div class="forgot">
+                    forgot password
+                </div> -->
+                <div class="form-inputs">
+                    <div class="buttonLoading">
+                        <div role="status" class="loader"></div>
+                     </div> 
+                    <span class="signIn">Continue with email</span>
+                    <input type="submit" id="button" value="">
+                    <!-- <a id="admin-link" href=""><button type="submit" id="button">
+                         
+                        <span class="signIn">Continue with email</span>
+                    </button></a> -->
+                </div>
+                <div class="dont-have">
+                    <a href="./sign-up.html">Create New Account?</a>
+                </div>
+             </div>
         </form>
+    </div>
+    <div id="model-container">
+        <div id="model">
+            <p>Credentials submitted are not valid.</p>
+            <div id="close">&times</div>
         </div>
-        <div id="model-container">
-            <div id="model">
-                <p>Credentials submitted are not valid.</p>
-                <div id="close">&times</div>
-            </div>
-        </div>
-        <script src="./Js/sign-in.js"></script>
-    </body>
-    </html>
+    </div>
+    <script src="./Js/sign-in.js"></script>
 </body>
 </html>

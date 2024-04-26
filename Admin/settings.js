@@ -1,6 +1,3 @@
- async function changePassword(event) {
-event.preventDefault()
-
 const menuBtn = document.querySelector('.hamburger')
 const closeBtn = document.querySelector('.close')
 menuBtn.onclick = () => {
@@ -22,25 +19,42 @@ menuBtn.onclick = () => {
         menuBtn.style.visibility = 'visible'
     })
 }
-const localUser = JSON.parse(localStorage.getItem('name')) || []
-  const roleUser = document.querySelector('.name')
-  roleUser.innerHTML = `${localUser}`
-  
-  const spanName = document.querySelector('.span-name')
-  spanName.innerHTML = `${localUser}`
-  const details = document.querySelector('.details');
 
-spanName.addEventListener('mouseover', () => {
+
+const localUser = JSON.parse(localStorage.getItem('name')) || []
+const user = document.querySelector('.homepage-description')
+const roleUser = document.querySelector('.name')
+roleUser.innerHTML = `${localUser}`
+user.innerHTML = `Hey, ${localUser} Welcome to the admin panel!`
+const activeUser = document.querySelector('.active-user')
+const spanName = document.querySelector('.span-name')
+
+const up = document.querySelector('.fa-chevron-up')
+const down = document.querySelector('.fa-chevron-down')
+const details = document.querySelector('.details');
+
+activeUser.addEventListener('mouseover', () => {
     details.style.visibility = 'visible';
+    up.style.visibility = 'visible'
+    down.style.visibility = 'hidden'
 });
 
 details.addEventListener('mouseover', () => {
     details.style.visibility = 'visible';
+    up.style.visibility = 'visible'
+    down.style.visibility = 'hidden'
 });
 
 details.addEventListener('mouseout', () => {
     details.style.visibility = 'hidden';
+    up.style.visibility = 'hidden'
+    down.style.visibility = 'visible'
 });
+spanName.innerHTML = `${localUser}`
+ 
+ async function changePassword(event) {
+event.preventDefault()
+
 const modelContainer = document.getElementById('model-container')
 const model = document.getElementById('model')
 const messageResponse = document.querySelector('.response')

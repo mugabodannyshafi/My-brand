@@ -4,12 +4,16 @@ async function adminLogin(event) {
  const userPassword = document.getElementById('pass')
  const modelContainer = document.getElementById('model-container')
  const close = document.getElementById('close')
+ const buttonLoading = document.querySelector('.buttonLoading')
+ const signIn = document.querySelector('.signIn')
 
 const userData = {
   emailAddress: username.value,
   pwd: userPassword.value
 }
-  await fetch("http://localhost:7000/login", {
+  signIn.style.visibility = 'hidden'
+  buttonLoading.style.visibility = 'visible'
+  await fetch("https://my-brand-backend-3-o1dg.onrender.com/login", {
   headers: {
     "Content-Type": "application/json"
   },
@@ -17,8 +21,10 @@ const userData = {
   body: JSON.stringify(userData)
 })
 .then((response) => {
-  if(!response.ok) 
+  if(!response.ok)
   {
+    signIn.style.visibility = 'visible'
+    buttonLoading.style.visibility = 'hidden'
     modelContainer.style.display = 'block';
    close.addEventListener('click', function()
    {
@@ -27,6 +33,8 @@ const userData = {
   }
   return response.json()
 }).then((data) => {
+  buttonLoading.style.visibility = 'hidden'
+  signIn.style.visibility = 'none'
   console.log(data.accessToken)
   console.log(data.result.username)
   const myUserID = data.result._id
@@ -35,14 +43,10 @@ const userData = {
   localStorage.setItem('id', JSON.stringify(myUserID))
   localStorage.setItem('name', JSON.stringify(userName))
   localStorage.setItem('jwt', JSON.stringify(myToken))
-    console.log('logged in')
-     window.location = "./loading/logging-loader.html"
+     window.location = "./Admin/admin-index.html"
 }).catch((error) => {
+  buttonLoading.style.visibility = 'hidden'
+  signIn.style.visibility = 'none'
   console.log(error)
-  modelContainer.style.display = 'block';
-  close.addEventListener('click', function()
-  {
-      modelContainer.style.display = 'none'
-  })
 })
- }
+}
