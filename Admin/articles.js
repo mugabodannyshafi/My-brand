@@ -54,7 +54,7 @@ const description = modal.querySelector('#description');
 const imageInput = modal.querySelector('#image');
 const addBtn = modal.querySelector('#addBtn');
 
-addBtn.onclick = async () => {
+    addBtn.onclick = async () => {
     const formData = new FormData();
     formData.append("title", title.value);
     formData.append("body", description.value);
@@ -62,6 +62,7 @@ addBtn.onclick = async () => {
     
     const token = JSON.parse(localStorage.getItem('jwt')) || [];
 
+    
     fetch('http://localhost:7000/blogs/newBlog', {
         headers: {
             "Authorization": `Bearer ${token}`
@@ -76,7 +77,7 @@ addBtn.onclick = async () => {
         return response.json()
     })
     .then((data) => {
-        console.log(data)
+        window.location.reload() = "./articles.html"
     })
     .catch((error) => {
         console.log(error.message)
@@ -174,19 +175,16 @@ fetch('http://localhost:7000/blogs', {
 })
 .then(blogData => {
     const div = document.createElement('div');
-            div.innerHTML = `<span class='numberOf'>This is card ${j} and this is id ${blogData.blogs[j]._id}</span>`;
             editContainer.appendChild(div);
-
           const blogsTitle = card.querySelector('.blogsTitle')
           const titleEdit = document.querySelector('.title')
           titleEdit.value = `${blogsTitle.textContent}`
-
+          const imageInputEdit = document.querySelector('.image');
           const blogDescription = card.querySelector('.blog-description')
           const descriptionEdit = document.querySelector('.description')
           descriptionEdit.innerHTML = `${blogDescription.textContent}`
           const editBtn = document.querySelector('.button-edit');
           editBtn.addEventListener('click', async () => {
-              const imageInputEdit = document.querySelector('.image');
               const formData = new FormData();
               formData.append("title", titleEdit.value);
               formData.append("body", descriptionEdit.value);
@@ -205,7 +203,7 @@ fetch('http://localhost:7000/blogs', {
                         return response.json()
                     }).then((data) => {
                         console.log(data)
-                        window.location = "./articles.html"
+                        window.location.reload() = "./articles.html"
                     }).catch((error) => {
                         console.log(error)
                     })
@@ -254,7 +252,7 @@ fetch(`http://localhost:7000/deleteBlog/${data.blogs[j]._id}`, {
     return response.json()
 }).then((items) => {
     console.log(items)
-    window.location = "./articles.html"
+    window.location.reload() = "./articles.html"
 }).catch((error) => {
     console.log(error.message)
 })

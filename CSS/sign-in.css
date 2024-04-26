@@ -74,7 +74,7 @@ body{
   font-weight: 600;
 }
 form{
-  height: 32rem;
+  height: 29rem;
   width: 32rem;
   resize: none;
   background: rgb(37, 48, 61);
@@ -85,13 +85,13 @@ form{
 }
 .container form .login-title{
   color: var(--clr-white);
-  font-size: 24px;
+  font-size: 25px;
   text-align: center;
   font-weight: 600;
  }
  .container form p{
   color: #8a96a3;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 15px;
   text-align: center;
 }
